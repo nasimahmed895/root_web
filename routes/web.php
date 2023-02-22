@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -48,8 +47,6 @@ Route::middleware(['install'])->group(function () {
 
     Auth::routes(['register' => false]);
 
-
-
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/sign-up', function () {
         return view('backend.pages.sign-up');
@@ -93,7 +90,7 @@ Route::get('/cache', function () {
     return redirect()->back()->with('success', _lang('Cache Clear successfully.'));
 });
 
-
+// Installtion Process
 Route::get('/installation', [InstallController::class, 'index']);
 Route::get('/install/database', [InstallController::class, 'database']);
 Route::post('/install/process_install', [InstallController::class, 'process_install']);
