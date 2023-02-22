@@ -8,7 +8,6 @@
     </div>
 </div>
 
-
 {{--  @if (Session::has('error'))
     toast('error', '{{ session('error') }}');
 @endif

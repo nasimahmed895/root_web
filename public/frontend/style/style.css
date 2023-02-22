@@ -94,7 +94,6 @@ body:not(*:root) {
     --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
-
 .ff-leelawui {
     font-family: leelawui;
 }
@@ -109,12 +108,15 @@ ul li {
 
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-family: 'Noto Sans';
+    font-weight: 800;
     line-height: 1.8rem;
 }
 
 .h4, h4 {
     font-size: 1.7rem;
+    font-family: 'Noto Sans';
+    font-weight: 800;
 }
 
 /* .navbar {

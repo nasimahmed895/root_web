@@ -157,7 +157,7 @@
 
 
                     <div class="" id="appy_button">
-                        <a href="{{ url('basicInformation', [$career->slug]) }}" class=" float-end"><img
+                        <a href="{{ route('basic-information', $career->slug) }}" class=" float-end"><img
                                 style="width: 7rem" src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}"
                                 alt="" srcset=""></a>
                     </div>

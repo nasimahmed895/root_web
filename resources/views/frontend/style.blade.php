@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" />
 
     <link rel="stylesheet" href="{{ asset('/public/frontend/font/stylesheet.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/mediaquery.css') }}">

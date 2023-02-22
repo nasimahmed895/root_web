@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use DataTables;
 
 class ApplyFromController extends Controller
@@ -19,15 +20,10 @@ class ApplyFromController extends Controller
             return Datatables::of($apply_form)
                 ->addIndexColumn()
                 ->addColumn('file', function ($files) {
-                    if ($files->file != '') {
-                        return '<a href="' .  url('root/apply-form/download',  $files->file) . '"  title="' . $files->file . '" >
-                   <img src="' . asset('/public/backend/assets/img/file.png') . '" alt="" srcset=""  style="width: 20px">
-                    </a>';
-                    } else {
-                        return  ' <a href="' . url('root/apply-form/download',  $files->file) . '" style="pointer-events: none" >
-                        <img src="' . asset('/public/backend/assets/img/file.png') . '" alt="" srcset=""  style="width: 20px">
-                         </a>';
-                    }
+
+                    return '<a target="_blank" href="../public/uploads/file/application/' . $files->file . '"  title="' . $files->file . '" >
+                            View
+                        </a>';
                 })
                 ->addColumn('action', function ($apply_form) {
                     $action = '<div class="dropdown text-center ">
@@ -35,7 +31,8 @@ class ApplyFromController extends Controller
                                 Action
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item ajax-modal" href="' . route('apply-form.show', $apply_form->id) . '"><i class="fas fa-envelope"></i> message </a></li>
+                                <li><a class="dropdown-item" href="' . url('root/apply-form/download',  $apply_form->file) . '" target="_blank"><i class="fas fa-eye"></i> Download</a></li>
+                                <li><a class="dropdown-item ajax-modal" href="' . route('apply-form.show', $apply_form->id) . '"><i class="fas fa-envelope"></i> Message</a></li>
                                 <li><form action="' . route('apply-form.destroy', $apply_form->id) . '" method="post" class="ajax-delete">'
                         . csrf_field()
                         . method_field('DELETE')
@@ -60,6 +57,7 @@ class ApplyFromController extends Controller
         }
         return view('backend.pages.apply_form', compact('apply_form'));
     }
+
     public function show($id, request $request)
     {
         $contact = Applicant::find($id);
@@ -69,23 +67,31 @@ class ApplyFromController extends Controller
             return view('backend.pages.massage', compact('contact'));
         }
     }
+
     public function destroy($id, request $request)
     {
-        Applicant::find($id)->delete();
+        $application = Applicant::find($id);
+
+        $pdf_path = public_path('/uploads/file/application/' . $application->file);
+        $application->delete();
+
+        if (File::exists($pdf_path))
+            File::delete($pdf_path);
+
         if (!$request->ajax()) {
             return back()->with('success', _lang('Information has been deleted'));
         } else {
             return response()->json(['result' => 'success', 'message' => _lang('Information has been deleted sucessfully')]);
         }
     }
+
     public function pdf_download($file)
     {
-
-        // return $image;
         $file_path = public_path('uploads/file/application/' . $file);
         // return Response::download($file_path);
         return response()->download($file_path);
     }
+
     public function chack()
     {
         return view('backend.pages.multi_datatable');

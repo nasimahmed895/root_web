@@ -6,7 +6,7 @@
         <div class="overlay">
         </div>
         <div class="slidcont ">
-            <h2 class=" fbold"> We Create software For a Sustainable Future. </h2>
+            <h2 class=" fbold"> We Create Software for a Sustainable Future. </h2>
             <h5 class="f500">We execute our ideas from the start to finish</h5>
         </div>
         </h1>
@@ -14,11 +14,10 @@
 
     <div class=" index">
         <div class="">
-            <div class="pt-4 pb-5 card_conatiner  services text-center">
-
+            <div class="pt-4 pb-5 card_conatiner services text-center">
                 <div class="container">
                     <h2 class="my-4">Our Featured Services</h2>
-                    <div class="slider demo  overflow-hidden">
+                    <div class="slider demo overflow-hidden">
                         @foreach ($featured as $featureds)
                             <div>
                                 <div class="card text-center">
@@ -31,10 +30,8 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -252,7 +249,7 @@
 
     <!-- clients -->
     <div class="bg pt-5 pb-5 overflow-hidden" style="background-color: #F7FAFD;">
-        <h4 class="text-center f700e">What Our Clients Think</h4>
+        <h2 class="text-center f700e">What Our Clients Think</h2>
         <div class="container">
             {{--  <section class="client_think ">
                 <div class="row d-flex align-items-center">
@@ -287,7 +284,9 @@
 
             </section>  --}}
 
-            <section class="client_think2 mt-3  client" style="width: 90% !important; margin: auto;">
+            <section class="client_think2 mt-3 client" style="width: 90% !important; margin: auto;">
+
+                
 
                 @foreach ($client as $clients)
                     <div class="single_client ">
@@ -318,8 +317,7 @@
     <!-- clients -->
     <!-- work with -->
     <div class="word_with text-center py-5">
-        <h4 class="f700 ">Technologies We Work With</h4>
-
+        <h2 class="f700 ">Technologies We Work With</h2>
 
         <div class="container">
             <div class="word_grid mt-5 ">
@@ -353,7 +351,7 @@
                 <div class="work_div mb-4">
                     <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/mysql.svg') }}" alt="flutter"
                         srcset="">
-                    <h1>mysql</h1>
+                    <h1>MYSQL</h1>
                 </div>
                 <div class="work_div mb-4">
                     <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/swift.svg') }}" alt="flutter"
@@ -387,8 +385,7 @@
     <!-- our  team -->
     <section class="text-center border-top ">
         <div class="container py-5">
-            <h4 class="tbold py-1 mb-5">
-                Meet With Our Expert's</h4>
+            <h2 class="tbold py-1 mb-5">Meet With Our Expert's</h2>
             <div class="row">
                 <div class="col-lg-6 ">
                     <div class=" our_team ">

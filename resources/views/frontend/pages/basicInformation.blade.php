@@ -21,7 +21,7 @@
                         <div class="col-1"></div>
                         <div class="col-sm-10">
                             <form action="{{ route('apply_now') }}" id="apply_form" method="POST"
-                                enctype="multipart/form-data" class=" needs-validation" novalidate>
+                                enctype="multipart/form-data" class="needs-validation" novalidate>
                                 @csrf
                                 <input type="hidden" name="slug" value="{{ $id }}">
                                 <div class="row ">
@@ -41,13 +41,12 @@
                                             </div>
                                             {{--  <div class="screenNameError text-danger "
                                                 style="font-size: .8rem ; text-align: left"></div>  --}}
-
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="mb-5">
                                             <div class="input-group flex-nowrap ">
-                                                <span class="input-group-text" style="    padding: 0.8rem;"
+                                                <span class="input-group-text" style="padding: 0.8rem;"
                                                     id="addon-wrapping"><img style="width: 23px;"
                                                         src="{{ asset('/public/frontend/Icon_Images/Root_icons/mail.png') }}"
                                                         alt="" srcset=""></span>

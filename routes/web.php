@@ -35,9 +35,9 @@ Route::get('/how-we-work', [WebController::class, 'how_we_work'])->name('how_we_
 Route::get('/project-base-solution', [WebController::class, 'project_base'])->name('project_base');
 Route::get('/dedicated-team', [WebController::class, 'dedicated_team'])->name('dedicated_team');
 Route::get('/contact', [WebController::class, 'contact'])->name('contact_us');
-Route::post('contact-stor', [WebController::class, 'contact_stor'])->name('contact_stor');
+Route::post('/contact-stor', [WebController::class, 'contact_stor'])->name('contact_stor');
 Route::get('/career', [WebController::class, 'career'])->name('career');
-Route::get('/basicInformation/{id}', [WebController::class, 'basicInformation'])->name('basicInformation');
+Route::get('/basic-information/{id}', [WebController::class, 'basicInformation'])->name('basic-information');
 Route::post('/apply-now', [WebController::class, 'apply_now'])->name('apply_now');
 Route::get('/job-details/{id}', [WebController::class, 'job_details'])->name('job_details');
 Route::get('/fileup', [WebController::class, 'fileup']);
@@ -77,13 +77,11 @@ Route::middleware(['install'])->group(function () {
             Route::post('general_settings', [SettingController::class, 'store_settings'])->name('general_settings');
             Route::post('general_settings_phone', [SettingController::class, 'general_settings_phone'])->name('general_settings_phone');
 
-
             Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
             Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
         });
     });
 });
-
 
 Route::get('/cache', function () {
     cache()->flush();
