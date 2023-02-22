@@ -1,0 +1,74 @@
+ .loder {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #011015;
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     z-index: 999999999999999999;
+ }
+
+ .ring {
+     width: 120px;
+     height: 120px;
+     border: 0px solid #011015;
+     border-radius: 50%;
+     position: absolute;
+     z-index: 999999999999999999;
+
+ }
+
+ .ring:nth-child(1) {
+     border-bottom-width: 8px;
+     border-color: rgb(255, 0, 255);
+     animation: rotat1 2s linear infinite;
+ }
+
+ .ring:nth-child(2) {
+     border-right-width: 8px;
+     border-color: rgb(0, 247, 255);
+     animation: rotat2 2s linear infinite;
+ }
+
+ .ring:nth-child(3) {
+     border-top-width: 8px;
+     border-color: rgb(0, 255, 13);
+     animation: rotat3 2s linear infinite;
+ }
+
+ @keyframes rotat1 {
+     0% {
+         transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+     }
+
+     100% {
+         transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+     }
+ }
+
+ @keyframes rotat2 {
+     0% {
+         transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+     }
+
+     100% {
+         transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+     }
+ }
+
+ @keyframes rotat3 {
+     0% {
+         transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+     }
+
+     100% {
+         transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+     }
+
+ }
+
+ .loging {
+     color: white
+ }
