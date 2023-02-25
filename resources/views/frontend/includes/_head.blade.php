@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
-    <title>{{ get_option('company_name') . get_option('site_title') }}</title>
+    <title>{{ get_option('site_title') }}</title>
     <link rel="stylesheet" href="{{ asset('/public/backend/assets/plugins/toastr/toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/loder.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/share.css') }}">
@@ -30,5 +26,3 @@
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/mediaquery.css') }}">
 
 </head>
-
-<body>

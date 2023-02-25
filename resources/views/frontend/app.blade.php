@@ -1,25 +1,29 @@
-@include('frontend.style')
-<div class="center_containt_loder " style="width: 100%; ">
-    <div class="loder" id="loder">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-        {{--  <span class="loging">Loging...</span>  --}}
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en-US">
 
-{{--  @if (Session::has('error'))
-    toast('error', '{{ session('error') }}');
-@endif
-@foreach ($errors->all() as $error)
-    toast('error', '{{ $error }}');
-@endforeach  --}}
-@include('frontend.nave')
+    {{-- Head --}}
+    @include('frontend.includes._head')
 
-@yield('container')
+    <body>
 
-@include('frontend.footer')
+        {{-- Loader --}}
+        {{-- <div id="loader">
+            <h2 id="loader-text" data-text="ROOTDEVS.">ROOT<span>DEVS</span><span>.</span></h2>
+        </div>  --}}
 
-@include('frontend.script')
+        {{-- Navigation Bar --}}
+        @include('frontend.includes._navbar')
 
-@yield('javascript')
+        {{-- Main Content --}}
+        @yield('container')
+        
+        {{-- Footer --}}
+        @include('frontend.includes._footer')
+
+        {{-- Script --}}
+        @include('frontend.includes._script')
+
+        @yield('js-script')
+
+    </body>
+</html>

@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-md-10 m-auto text-center">
-                <h4 class="mb-5">Basic Information</h4>
+                <h2 class="mb-5">Basic Information</h2>
                 <div class="card basicinformation"
                     style="background-color: #F7FAFD; border: none;  box-shadow: 0px 0px 6px 1px #CFCECE; padding: 30px 30px;">
 
@@ -147,7 +147,7 @@
         </div>
     </div>
 @endsection
-@section('javascript')
+@section('js-script')
     <script>
         $('.dropify').dropify({
             messages: {

@@ -331,7 +331,8 @@
         </div>
     </div>
 @endsection
-@section('javascript')
+
+@section('js-script')
     <script>
         var meeting = null;
         var date_click = false;

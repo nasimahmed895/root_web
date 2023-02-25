@@ -5,7 +5,7 @@
             style="background-image:url({{ asset('/public/frontend/Icon_Images/About\ Us.jpg') }}">
             <div class="bgclor px20">
                 <div class="container">
-                    <h3 class="mb-3 f500">Who We Are ?</h3>
+                    <h2 class="mb-3 f500">Who We Are ?</h2>
                     <p class=" ff-Roboto f100"><span class="root">Root</span><span class="devs">Devs</span> is here to give
                         a new face to your business through IT solutions. <br>
                         Here all the creative minds work together. We are ready to deliver maximum excellence to our
@@ -26,7 +26,8 @@
     <div class="container about ">
 
         <div class="meet_ledeership text-center pt-5 pb-5">
-            <div class="h4 text-center mb-5">Meet With Leadership</div>
+            {{-- <div class="h4 text-center mb-5">Meet With Leadership</div> --}}
+            <h2 class="text-center mb-5">Meet With Leadership</h2>
             <div class="mcard">
                 <div class="row ">
                     <div class="col-md-6 mb-sm-5 position_set d-flex  ">
@@ -96,8 +97,7 @@
 
     <section class="text-center border-top ">
         <div class="container py-5">
-            <h4 class="tbold py-1 mb-5">
-                Meet With Our Expert's</h4>
+            <h2 class="tbold py-1 mb-5">Meet With Our Expert's</h2>
             <div class="row">
                 <div class="col-lg-6">
                     <div class=" our_team ">
@@ -134,7 +134,7 @@
         <div class="container about ">
             <div class="mission py-5 ">
                 <div class="">
-                    <h4 class="text-center mb-5 fbold">Our Mission</h4>
+                    <h2 class="text-center mb-5 fbold">Our Mission</h2>
 
                     <section class="client_think ">
                         <div class="row d-flex align-items-center">
@@ -176,7 +176,7 @@
 
     <div class="container">
         <div class="wreapper text-center py-5">
-            <h4 class="mb-3">Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
+            <h2 class="mb-3">Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h2>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
                         src="public/frontend/Icon_Images/Album/IMG20220301182928.png" alt="" srcset="">

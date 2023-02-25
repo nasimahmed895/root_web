@@ -17,16 +17,23 @@
 <!-- Dropify  -->
 <script src="{{ asset('/public/backend/assets/plugins/toastr/toastr.js') }}"></script>
 
+{{-- <script>
+    setTimeout(function () {
+        $('div#loader').fadeOut("slow");
+    }, 2000)
+</script> --}}
+
 <script>
     {{--  $('.dropify').dropify();  --}}
     $(document).ready(function() {
         $("#loder").fadeOut("slow");
     });
-    let loder = document.querySelector('#loder');
-    window.onload = function() {
-        loder.style.display = 'none ';
 
-    }
+    // let loder = document.querySelector('#loder');
+    // window.onload = function() {
+    //     loder.style.display = 'none ';
+
+    // }
 
     function toast(result, message) {
         $.toast({
@@ -50,7 +57,3 @@
         toast('error', '{{ $error }}');
     @endforeach
 </script>
-
-</body>
-
-</html>
