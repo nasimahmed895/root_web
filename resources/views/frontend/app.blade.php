@@ -7,9 +7,9 @@
     <body>
 
         {{-- Loader --}}
-        {{-- <div id="loader">
+        <div id="loader">
             <h2 id="loader-text" data-text="ROOTDEVS.">ROOT<span>DEVS</span><span>.</span></h2>
-        </div>  --}}
+        </div> 
 
         {{-- Navigation Bar --}}
         @include('frontend.includes._navbar')

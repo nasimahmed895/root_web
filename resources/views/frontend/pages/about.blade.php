@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| ABOUT')
+
 @section('container')
     <div class="about nav-top">
         <div class="slider   text-center"

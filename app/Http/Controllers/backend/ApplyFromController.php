@@ -31,7 +31,7 @@ class ApplyFromController extends Controller
                                 Action
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="' . url('root/apply-form/download',  $apply_form->file) . '" target="_blank"><i class="fas fa-eye"></i> Download</a></li>
+                                <li><a class="dropdown-item" href="' . url('root/apply-form/download',  $apply_form->file) . '" target="_blank"><i class="fas fa-download"></i> Download</a></li>
                                 <li><a class="dropdown-item ajax-modal" href="' . route('apply-form.show', $apply_form->id) . '"><i class="fas fa-envelope"></i> Message</a></li>
                                 <li><form action="' . route('apply-form.destroy', $apply_form->id) . '" method="post" class="ajax-delete">'
                         . csrf_field()

@@ -63,7 +63,7 @@
                     <div class="mb-5"><span class="tbold">Follow Us</sp>
                     </div>
 
-                    <div class="row text-center socalmedeya" style="margin: -17px">
+                    <div class="row text-center social-media">
 
                         <div class=" icon col col-md-3">
                             <a href="{{ get_option('facebook') }}" target="_blank"><i

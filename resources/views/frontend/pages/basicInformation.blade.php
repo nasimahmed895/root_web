@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| BASIC INFORMATION')
+
 @section('container')
     <div class="slider basicinformation text-center"
         style="background-image:url({{ asset('/public/frontend/Icon_Images/company-representatives-reading-applicant-resume-hiring.png') }})">

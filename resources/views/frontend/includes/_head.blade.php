@@ -3,9 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
-    <title>{{ get_option('site_title') }}</title>
+    <title>{{ get_option('site_title') }} @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/public/backend/assets/plugins/toastr/toastr.css') }}">
-    <link rel="stylesheet" href="{{ asset('/public/frontend/style/loder.css') }}">
+    <link rel="stylesheet" href="{{ asset('/public/frontend/style/loader.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/share.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,5 +24,5 @@
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/mediaquery.css') }}">
-
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>

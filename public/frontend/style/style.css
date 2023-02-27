@@ -56,26 +56,16 @@
 }
 
 /* new font  end */
-
-
-/* @font-face {
-    font-family: candara;
-    src: url(frontend/font/Candara.ttf);
-} */
-
 html {
     margin: 0;
     padding: 0;
 }
-
-
 
 body {
     margin: 0;
     padding: 0;
     font-size: 62.5%;
     width: 100%;
-    /* transition: all ease-in-out; */
     color: #000040 !important;
     letter-spacing: 1px !important;
     font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
@@ -107,30 +97,30 @@ ul li {
 }
 
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Noto Sans';
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.8rem;
 }
 
-.h4, h4 {
+.h4,
+h4 {
     font-size: 1.7rem;
     font-family: 'Noto Sans';
-    font-weight: 800;
+    font-weight: 700;
 }
 
-/* .navbar {
-    font-family: 'candara';
-}
-
-.navbar-toggler2 {
-    display: none;
-}
-
-.navbar-toggler:focus {
-
-    box-shadow: none;
-} */
 .navbar {
     font-family: 'candara';
     position: fixed;
@@ -154,7 +144,8 @@ button#navbar-up-icon span {
     font-size: .8rem;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
     background-color: #0802ff4d;
     color: #000;
 }
@@ -174,15 +165,10 @@ button#navbar-up-icon span {
     box-shadow: 0px 0px 22px -7px #0000007a;
 }
 
-.dropdown-menu {
-    /* display: block; */
-}
-
 .navbar {
     z-index: +99999;
     background-color: #fff;
     height: 75px !important;
-
 }
 
 .jq-toast-wrap.top-right {
@@ -202,7 +188,6 @@ button#navbar-up-icon span {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .navbar .nav-link .word_arrow {
@@ -228,11 +213,13 @@ button#navbar-up-icon span {
     transition: all .2s ease-in-out;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
     color: #f8073b;
 }
 
-.navbar-nav .nav-link.contact.active, .navbar-nav .show>.nav-link {
+.navbar-nav .nav-link.contact.active,
+.navbar-nav .show>.nav-link {
     color: #fff;
 }
 
@@ -241,25 +228,20 @@ button#navbar-up-icon span {
     border-radius: 50px;
     padding: 0;
     color: #fff;
-    /* padding-left: 5px;
-    padding-right: 5px; */
     padding: 2px 5px;
 }
 
 .navbar-nav .nav-item {
-    /* transition: all 1s ease-in-out; */
     margin-left: 7px;
 }
 
-
-
-.navbar-nav .nav-item:hover .nav-link, .navbar-nav .show>.nav-link {
-    /* color: #6d6db9; */
-    /* color: #FD6385; */
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .show>.nav-link {
     margin-top: 3px;
 }
 
-.navbar-nav .nav-item:hover .nav-link::after, .navbar-nav .show>.nav-link {
+.navbar-nav .nav-item:hover .nav-link::after,
+.navbar-nav .show>.nav-link {
     top: 2rem;
 }
 
@@ -280,35 +262,23 @@ button#navbar-up-icon span {
     transition: all .2s ease-in-out;
 }
 
-/* .navbar-nav .nav-item:hover .contact .icon {
-    background-image: url(../../frontend/Icon_Images/after.png);
-    width: 30px;
-    height: 24px;
-    background-position: 100% 100%;
-    background-size: 28px auto;
-    margin-right: -5px;
-    background-repeat: no-repeat;
-} */
-
-
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
     width: 97%;
-
 }
-
 
 .navbar-nav .dropdown-menu {
     margin: 0;
     border: 0;
     padding: 0px;
-    /* background-color: #000; */
 }
 
-
-
 .navbar-nav .dropdown-item {
-
     font-weight: 700;
     color: #000040;
     transition: all .3s ease-in-out;
@@ -318,12 +288,6 @@ button#navbar-up-icon span {
     border-radius: 0px !important;
 }
 
-
-/* .navbar-nav .dropdown-item:focus, .navbar-nav .dropdown-item:hover {
-    background-color: #fff;
-    transform: scale(0.9);
-} */
-
 .dropdown-menu li:hover::before {
     content: "";
     position: absolute;
@@ -332,7 +296,6 @@ button#navbar-up-icon span {
     height: 55px;
     background: red;
     overflow: hidden;
-    /* top: 54px; */
 }
 
 .dropdown-menu li.active::before {
@@ -343,7 +306,6 @@ button#navbar-up-icon span {
     height: 55px;
     background: red;
     overflow: hidden;
-    /* top: 54px; */
 }
 
 .navbar-nav .dropdown-item.active {
@@ -354,16 +316,6 @@ button#navbar-up-icon span {
     border-radius: 5px;
     padding: 13px;
 }
-
-/* .navbar-nav .dropdown-item.active .dropdown-menu li:before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    width: 3px;
-    height: 55px;
-    background: red;
-    overflow: hidden;
-} */
 
 .navbar .nav-link.active::after {
     content: "";
@@ -378,10 +330,8 @@ button#navbar-up-icon span {
 }
 
 .navbar .nav-link:hover:after {
-
     width: 5px;
     height: 5px;
-
     top: 2.1rem;
 }
 
@@ -396,31 +346,29 @@ button#navbar-up-icon span {
 hr {
     margin: 1rem 0;
     color: #00000070;
-
     border: 0;
     border-top: 1px solid;
     opacity: .25;
 }
 
-
 /* video */
-
-
 .bg-video-wrap {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100vh;
-    /* background: url(https://designsupply-web.com/samplecontent/vender/codepen/20181014.png) no-repeat center center/cover; */
 }
 
-.bg-video-wrap .slidcont h2, .hire_team h2, .contact_us h2 {
+.bg-video-wrap .objective h2,
+.hire_team h2,
+.contact_us h2 {
     font-size: 2.3rem;
     letter-spacing: 3px;
     line-height: 4rem;
 }
 
-.bg-video-wrap .slidcont h5, .hire_team h5 {
+.bg-video-wrap .objective h5,
+.hire_team h5 {
     font-size: 1.7rem;
     margin-top: 20px;
     opacity: .5;
@@ -450,7 +398,7 @@ video {
     background-color: rgb(0 0 64 / 60%) !important;
 }
 
-.slidcont {
+.objective {
     text-align: center;
     color: #fff;
     position: absolute;
@@ -460,8 +408,6 @@ video {
     right: 0;
     margin: auto;
     z-index: 3;
-    /* max-width: 400px;
-    width: 100%; */
     height: 50px;
 }
 
@@ -547,7 +493,8 @@ div.card_conatiner .card .card-text {
     padding: 5px;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
     color: black;
 
 }
@@ -731,13 +678,9 @@ div#counters_1\  {
 }
 
 .round2 {
-    /* position: relative; */
     width: 100%;
     height: 550px;
     overflow: hidden;
-    /* background: #2929fd; */
-
-
 }
 
 .round2 .wrapper2 {
@@ -769,7 +712,6 @@ div#counters_1\  {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    /* border: 1px solid #FF80AB; */
     display: inline-block;
     margin: 0;
     font-size: 3em;
@@ -778,7 +720,6 @@ div#counters_1\  {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: all .3s ease-in-out; */
 }
 
 .round2 .wrapper2 .item2 img {
@@ -788,8 +729,6 @@ div#counters_1\  {
     object-fit: cover;
     transition: all .3s ease-in-out;
 }
-
-
 
 .round2 .wrapper2 .item2 p {
     position: absolute;
@@ -802,8 +741,6 @@ div#counters_1\  {
     text-align: end;
     transition: none;
 }
-
-
 
 .round2 .wrapper2 .item2.active p {
     display: block;
@@ -842,7 +779,6 @@ section.client_think {
 }
 
 .client_think .client_video {
-
     height: 85%;
 }
 
@@ -950,7 +886,8 @@ section.client_think2 {
 
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
     z-index: 99;
 }
 
@@ -1098,7 +1035,6 @@ div.member_info {
     justify-content: center;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    /* box-shadow: 12px 0 8px -11px #8888881f, -12px 0 8px -4px #8888881f; */
 }
 
 div.member_info span:first-child {
@@ -1114,8 +1050,6 @@ div.social_info {
     height: 70px;
     text-align: center;
     transition: 0.9s;
-    /* background-size: 100% 200%; */
-    /* background-image: linear-gradient(to bottom, #fff 50%, #FB3560 50%); */
 }
 
 div.social_info i {
@@ -1125,9 +1059,6 @@ div.social_info i {
 }
 
 div.single_member:hover .social_info {
-    /* background-position: 0 -100%; */
-    /* background-image: linear-gradient(90deg, #F92453, #FE6D8D); */
-    /* background-image: linear-gradient(to right, #F92453 , #FE6D8D); */
     background-color: #F92453;
     transition: .5s all;
 }
@@ -1140,16 +1071,12 @@ div.single_member:hover .social_info a i {
     color: #fff;
 }
 
-
-
 div.team_info {
     padding: 25px 15px 45px 15px;
     font-size: 13px;
     text-align: center;
-
     line-height: 20px;
     font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
-    ;
 }
 
 .team_image {
@@ -1158,7 +1085,6 @@ div.team_info {
     width: 100%;
     justify-content: center;
     display: flex;
-
     transition-timing-function: all .3s ease-in-out;
 }
 
@@ -1172,21 +1098,12 @@ div.team_info {
 div.member:hover .team_image {
     transform: translateY(12px);
 }
-
-
-
 /* Our Team */
-
-
-
-
 /* footer */
 /* Book Meeting Banner */
 .book_meeting_banner {
-
     width: 100%;
     background-size: cover;
-    /* position: relative; */
     height: 300px;
 }
 
@@ -1214,18 +1131,14 @@ div.book_meeting span {
     color: #fff;
 }
 
-
-
 /* Book Meeting Banner */
 .contant {
     background-color: #000040;
     color: white;
-
 }
 
 .wrapper div span {
     font-size: 19px;
-    /* border-bottom: 1px solid red; */
     position: relative;
 }
 
@@ -1278,8 +1191,6 @@ footer .wrapper ul li {
 footer .wrapper ul li:hover a {
     color: white;
     margin-left: 5px;
-
-
 }
 
 footer .icon a i {
@@ -1293,19 +1204,16 @@ footer .icon a {
     padding: 5px;
     font-size: 11px;
     transition: all .3s ease-in-out;
-
 }
 
 footer .icon a:hover {
     background-color: #F91E4E;
     color: #fff;
-
 }
 
 footer .wrapper.Services p:hover {
     color: white;
     margin-left: 5px;
-
 }
 
 footer .wrapper.Services p {
@@ -1314,11 +1222,7 @@ footer .wrapper.Services p {
 
 footer .icon {
     margin-bottom: 30px;
-
-
 }
-
-
 
 .copyright {
     border-top: 1px solid red;
@@ -1331,9 +1235,8 @@ footer .icon {
 
 /* footer */
 
-
-
-.bgclor, .basicinformation .bgclor {
+.bgclor,
+.basicinformation .bgclor {
     background-color: rgba(6, 2, 255, 0.2);
     width: 100%;
     height: 100%;
@@ -1343,7 +1246,6 @@ footer .icon {
 .root {
     color: #F91E4E;
     font-weight: bold;
-
 }
 
 .devs {
@@ -1355,11 +1257,13 @@ footer .icon {
     font-weight: 400;
 }
 
-.about .slider, .casestudy .slider, .contact_us.slider, .basicinformation {
+.about .slider,
+.casestudy .slider,
+.contact_us.slider,
+.basicinformation {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* background-size: 100% auto;   */
     color: white;
     object-fit: cover;
 }
@@ -1400,13 +1304,10 @@ footer .icon {
 
 .leadership_card .right .card-body {
     right: 220px;
-
-
 }
 
 .leadership_card .end {
     margin-right: -15px;
-
 }
 
 .meet_ledeership .leadership_image img {
@@ -1417,16 +1318,13 @@ footer .icon {
 
 .mission_content p {
     font-size: 1.1rem;
-    /* font-weight: 600; */
 }
-
 
 .mission_wrreaper img {
     overflow: hidden;
     transition: transform .2s ease-in-out;
     height: 375px;
     width: 100%;
-    /* opacity: .7; */
 }
 
 .mission_wrreaper img:hover {
@@ -1444,16 +1342,13 @@ footer .icon {
 .leadership_card .card-body {
     width: 200px;
 }
-
 /* about end */
-
 
 /* casestudy  */
 .grid-casestudy {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-
 }
 
 .grid-casestudy .btn {
@@ -1461,23 +1356,24 @@ footer .icon {
     border: #F91E4E;
     transition: all .5s ease-in-out;
     font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
-    ;
 }
 
 .grid-casestudy .btn:hover {
     background-color: #EE1B24;
     border: #EE1B24;
-
 }
 
-.casestudy p, .heading p, .mission_content p, .how_it_word p, .content p {
+.casestudy p,
+.heading p,
+.mission_content p,
+.how_it_word p,
+.content p {
     font-size: 1rem;
     font-weight: 500;
     text-align: justify;
     margin-top: -5px;
     line-height: 2rem;
     font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
-    ;
 }
 
 .heading p {
@@ -1492,7 +1388,6 @@ footer .icon {
     font-weight: 500;
     text-align: center;
     margin-top: -5px;
-    /* text-transform: uppercase; */
 }
 
 .casestudy a {
@@ -1506,9 +1401,6 @@ footer .icon {
     margin: auto;
     padding-top: 10px;
 }
-
-
-
 /* case_study 01 */
 
 .project_sum h5 {
@@ -1527,7 +1419,6 @@ footer .icon {
 .csaction {
     display: none;
     transition: .5s all ease-in-out;
-
 }
 
 .mission_wrreaper .hover_text {
@@ -1580,7 +1471,6 @@ footer .icon {
     margin: auto;
 }
 
-
 .features ul li {
     position: relative;
     cursor: pointer;
@@ -1597,13 +1487,11 @@ footer .icon {
     width: 8px;
     height: 1px;
     background-color: #000;
-
 }
 
 .features ul li:hover {
     color: #F92453;
     left: 5px;
-    /* transition: all .2s ease-in-out; */
 }
 
 .casestudy .slider_planning .shadow-black:hover {
@@ -1615,10 +1503,8 @@ footer .icon {
 }
 
 .panning .slick-slide:hover {
-    /* top: 20px; */
     margin-top: -11px;
 }
-
 /* case_study 01 */
 
 /* case_study */
@@ -1640,7 +1526,6 @@ footer .icon {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
 .hire_dedicate_team ul li {
@@ -1653,10 +1538,11 @@ footer .icon {
     height: 80%;
 
 }
-
 /* hire_dedicate_team */
+
 /* contact_us */
-.form-control.is-valid, .was-validated .form-control:valid {
+.form-control.is-valid,
+.was-validated .form-control:valid {
     border-color: #198754;
     padding-right: calc(1.5em + 0.75rem);
     background-image: url('');
@@ -1665,7 +1551,8 @@ footer .icon {
     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.form-control.is-invalid, .was-validated .form-control:invalid {
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
     border-color: 1px solid #dc3545;
     padding-right: calc(1.5em + 0.75rem);
     background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e);
@@ -1707,12 +1594,14 @@ footer .icon {
     margin-bottom: 2rem !important;
 }
 
-.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
     border-color: #198754;
     box-shadow: none;
 }
 
-.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
     border-color: #dc3545;
     box-shadow: none;
 }
@@ -1724,7 +1613,6 @@ footer .icon {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
 
 .contact_heading .back {
     width: 30px;
@@ -1901,14 +1789,17 @@ footer .icon {
     background-color: #F2F2F5;
 }
 
-.mbsc-datepicker-tab, .mbsc-datepicker-tab-wrapper {
+.mbsc-datepicker-tab,
+.mbsc-datepicker-tab-wrapper {
     -moz-box-pack: center;
     display: -moz-box;
     display: flex;
     justify-content: center;
 }
 
-.mbsc-ios.mbsc-timegrid-item.mbsc-selected, .mbsc-ios.mbsc-timegrid-item:focus, .mbsc-ios.mbsc-timegrid-item {
+.mbsc-ios.mbsc-timegrid-item.mbsc-selected,
+.mbsc-ios.mbsc-timegrid-item:focus,
+.mbsc-ios.mbsc-timegrid-item {
     padding: 10px;
     background-color: none;
     border: 1px solid black;
@@ -1926,7 +1817,9 @@ footer .icon {
     margin-bottom: 10px;
 }
 
-.mbsc-ios.mbsc-timegrid-item.mbsc-selected, .mbsc-ios.mbsc-timegrid-item:focus, .mbsc-ios.mbsc-timegrid-item:hover {
+.mbsc-ios.mbsc-timegrid-item.mbsc-selected,
+.mbsc-ios.mbsc-timegrid-item:focus,
+.mbsc-ios.mbsc-timegrid-item:hover {
     /* font-size: .875em; */
     font-size: .900em;
     margin: 0.5em 0.625em;
@@ -1962,13 +1855,6 @@ footer .icon {
     cursor: pointer;
 }
 
-/*
-.mbsc-ios.mbsc-timegrid-item {
-    background: #007bff;
-    color: rgb(255, 255, 255);
-    cursor: default;
-} */
-
 .mbsc-datepicker-control-calendar .mbsc-datepicker-tab-timegrid {
     display: none;
 }
@@ -1995,7 +1881,6 @@ footer .icon {
     cursor: pointer;
 }
 
-
 .mbsc-datepicker-tab-wrapper {
     flex-wrap: wrap;
     overflow: hidden;
@@ -2008,14 +1893,14 @@ footer .icon {
     border: 0;
 }
 
-.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {
+.xdsoft_datetimepicker .xdsoft_datepicker.active,
+.xdsoft_datetimepicker .xdsoft_timepicker.active {
     width: 60%;
 }
 
 .xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker {
     width: 36%;
     margin-top: 38px;
-    /* display: none; */
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td {
@@ -2029,7 +1914,6 @@ footer .icon {
     text-align: center;
 }
 
-
 .xdsoft_datetimepicker .xdsoft_calendar td:hover {
     color: #000040 !important;
     background: #dee2e659 !important;
@@ -2037,7 +1921,6 @@ footer .icon {
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar table {
-
     height: 350px;
 }
 
@@ -2062,7 +1945,6 @@ footer .icon {
     border: 1px solid #000040;
     border-radius: 5px;
     background-color: #fff;
-
 }
 
 .xdsoft_datetimepicker .xdsoft_time:hover {
@@ -2078,16 +1960,19 @@ footer .icon {
     height: 45px;
 }
 
-
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
     display: none;
 }
 
-.xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_today_button {
+.xdsoft_datetimepicker .xdsoft_next,
+.xdsoft_datetimepicker .xdsoft_prev,
+.xdsoft_datetimepicker .xdsoft_today_button {
     display: none;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar td, .xdsoft_datetimepicker .xdsoft_calendar th {
+.xdsoft_datetimepicker .xdsoft_calendar td,
+.xdsoft_datetimepicker .xdsoft_calendar th {
     border: 0px solid #ddd;
 }
 
@@ -2104,14 +1989,14 @@ footer .icon {
     color: #000040;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {
     background: #dddddd42 !important;
     box-shadow: #178fe500 0 1px 3px 0 inset;
     color: #fff;
     font-weight: 700;
 }
-
-
 
 .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current>div {
     background-color: #000040;
@@ -2134,7 +2019,6 @@ footer .icon {
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current:hover {
     color: #fff !important;
 }
-
 
 .xdsoft_calendar .xdsoft_today div {
     position: relative;
@@ -2169,7 +2053,6 @@ footer .icon {
     border-bottom-width: 2px;
 }
 
-
 /* time */
 /* map */
 .mapouter {
@@ -2193,7 +2076,6 @@ footer .icon {
 
 }
 
-
 .contact_us .input-group-text,
 .basicinformation .input-group-text {
     color: #000040;
@@ -2202,16 +2084,15 @@ footer .icon {
     background-color: #edf0f5;
 }
 
-.contact_us .input-group-text img, .basicinformation .input-group-text img {
+.contact_us .input-group-text img,
+.basicinformation .input-group-text img {
     width: 25px;
 }
 
 .contact_us .form-control,
 .basicinformation .form-control {
-    /* height: 50px; */
     border: none;
     border-radius: 0px 10px 10px 0px;
-    /* background-color: #40001e; */
 }
 
 .contact_us .form-control:focus,
@@ -2240,7 +2121,6 @@ footer .icon {
 }
 
 .contact_us .input-group-text {
-
     padding: .7rem;
 }
 
@@ -2252,11 +2132,9 @@ footer .icon {
 
 .contact_us .btn {
     border: 1px solid #000040;
-    /* color: gray; */
     background-color: white;
     padding: 8px 20px;
     border-radius: 8px;
-    /* font-size: 20px; */
     font-weight: bold;
 }
 
@@ -2268,7 +2146,8 @@ footer .icon {
     opacity: 0;
 }
 
-#other, #reset {
+#other,
+#reset {
     width: 95px;
     border: none;
 }
@@ -2284,7 +2163,6 @@ footer .icon {
     margin-right: 10px;
     margin-bottom: 5px;
     display: none;
-
 }
 
 #myBar1 {
@@ -2293,7 +2171,6 @@ footer .icon {
     background-color: #000040;
     border-radius: 5px;
     position: relative;
-
 }
 
 #progss1 {
@@ -2338,7 +2215,6 @@ footer .icon {
 }
 
 .upload_file {
-    /* position: relative; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -2352,14 +2228,12 @@ footer .icon {
 
 #submit_wreaper_prog {
     padding-top: 23px;
-
 }
 
 .upload-btn-wrapper {
     margin-left: 10px
 }
 
-/* form */
 /* contact_us */
 
 /* career */
@@ -2479,7 +2353,7 @@ footer .icon {
     border-radius: 13px;
 }
 
-.career .slidcont {
+.career .objective {
     text-align: center;
     color: #fff;
     position: absolute;
@@ -2494,35 +2368,17 @@ footer .icon {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 /* gallery */
-
-
-/* .gallery .teamimg {
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 1px #e0e0e0;
-
-} */
-
 .gallery .img_responsive {
     max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
-
-
-
 /* grid */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: 200px 200px; */
-
 }
 
 .grid-item {
@@ -2538,9 +2394,6 @@ footer .icon {
     grid-row: 1/3;
     grid-column: 3/4;
 }
-
-
-
 /* .basicinformation */
 .basicinformation p {
     font-size: 1.5rem;
@@ -2552,6 +2405,7 @@ footer .icon {
 
 .dropify-wrapper {
     border: 2px dashed #ddd;
+    border-radius: 10px;
 }
 
 .basicinformation input {
@@ -2581,25 +2435,18 @@ input::placeholder {
 .basicinformation .send:hover .icon {
     color: #000040;
 }
-
 /* .basicinformation */
-
 /* how we word */
-
-
 .work p {
     font-size: 1.1rem;
 }
 
 .work .card .card-img-top {
     box-shadow: 0px 0px 22px -7px #0000007a;
-    ;
 }
-
 
 .work .card {
     --bs-card-height: max-content;
-    ;
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
     --bs-card-title-spacer-y: 0.5rem;
@@ -2614,14 +2461,9 @@ input::placeholder {
     background-clip: border-box;
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
     border-radius: var(--bs-card-border-radius);
-    /* overflow: hidden; */
     box-shadow: var(--bs-card-box-shadow);
     transition: all .2s ease-in-out;
 }
-
-/* .work .card:hover {
-    margin-top: -5px;
-} */
 
 .work ul {
     font-size: .9rem;
@@ -2633,7 +2475,6 @@ input::placeholder {
     font-weight: 500;
     margin-top: 10px;
 }
-
 
 .word_card .card {
     width: 60%;
@@ -2662,7 +2503,6 @@ input::placeholder {
     top: 50%;
     color: black;
     font-size: .9rem;
-
     transition: all .2s ease-in-out;
     text-decoration: none;
 }
@@ -2671,7 +2511,6 @@ input::placeholder {
     margin-left: -15%;
     color: rgb(241, 53, 53);
     background: #F91E4E;
-    /* width: 30%; */
 }
 
 .work .card.right a:hover {
@@ -2692,8 +2531,6 @@ input::placeholder {
     right: -47%;
 }
 
-
-
 .work .card a:after {
     font-family: "Font Awesome 5 Free";
     content: "\f061";
@@ -2713,28 +2550,23 @@ input::placeholder {
 }
 
 .work .card.right a::after {
-    /* font-family: "Font Awesome 5 Free";
-    content: "\f060";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900; */
     display: none;
 }
 
-.card-img, .card-img-top {
+.card-img,
+.card-img-top {
     height: auto;
 }
 
-
-/* how we word */
-/* jobdetails */
 .button_scroll {
     bottom: 75px;
     right: 75px;
     position: fixed;
     z-index: 9;
     animation: fadeIn 1s;
+    box-shadow: 0px 0px 20px 11px rgb(0 0 0 / 32%);
+    border-radius: 12px;
+    border: 1px solid #f91e4e69;
 }
 
 @keyframes fadeIn {
@@ -2773,12 +2605,16 @@ img.share_icon {
 .heading_bottom div {
     padding: .8rem 0rem .8rem 1.5rem;
     border-right: 1px solid #a59898;
-
 }
 
 .heading_bottom div:last-child {
     border-right: 0px solid #a59898;
+}
 
+div#job-attr p {
+    font-size: 1rem;
+    margin: 0;
+    color: hsl(240, 100%, 8%);
 }
 
 .job-details {
@@ -2807,7 +2643,6 @@ img.share_icon {
     font-weight: 400;
 }
 
-
 .details ul li {
     font-size: 1rem;
     list-style: disc;
@@ -2824,13 +2659,4 @@ img.share_icon {
 .job-details_right .details_main {
     margin-left: 5%;
 }
-
-
-
-
-/* jobdetails */
-
-
-
-
-/* card */
+/* job-details */

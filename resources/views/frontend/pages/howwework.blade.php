@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| HOW WE WORK')
+
 @section('container')
     <div class=" work card_bg nav-top">
         <div class="container">

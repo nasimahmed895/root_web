@@ -5,7 +5,6 @@
         .card {
             background-color: #F9FBFD
         }
-
         .body_content {
             background-color: #fff;
             border-top: 1px solid #dee2e6;
@@ -15,7 +14,6 @@
             margin-bottom: -2px;
             margin-left: -1px;
         }
-
         .nav-item {
             cursor: pointer;
         }
@@ -139,6 +137,24 @@
                                                                         required>
                                                                         {{ load_language(get_option('language')) }}
                                                                     </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">{{ _lang('Objective Part One') }}</label>
+                                                                    <input type="text" class="form-control" name="objective_part_one" value="{{ get_option('objective_part_one') }}" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">{{ _lang('Objective Part Two') }}</label>
+                                                                    <input type="text" class="form-control" name="objective_part_two" value="{{ get_option('objective_part_two') }}" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">{{ _lang('Objectives') }}</label>
+                                                                    <input id="singleFieldTags" type="text" class="form-control" name="objectives" value="{{ get_option('objectives') }}">
                                                                 </div>
                                                             </div>
 
@@ -577,6 +593,13 @@
         });
         $(document).on('click', '.remove-row', function() {
             $(this).closest('.col-md-12').remove();
+        });
+
+        $('#singleFieldTags').tagit({
+            availableTags: [],
+            // This will make Tag-it submit a single form value, as a comma-delimited field.
+            singleField: true,
+            singleFieldNode: $('#mySingleField')
         });
     </script>
 @endsection
