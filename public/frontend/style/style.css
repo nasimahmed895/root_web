@@ -2660,3 +2660,9 @@ div#job-attr p {
     margin-left: 5%;
 }
 /* job-details */
+
+
+
+.objective span.multiText {
+    color: #f91d4e;
+}

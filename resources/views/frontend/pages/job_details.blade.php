@@ -154,27 +154,35 @@
                                 </label>
                             </div>
                         </div> --}}
-                       <div>
+                        <div id="share_button">
                             <div class="share">
-                                <span><i class="fas fa-share-alt"></i></span>
-                                
-                                <div class="nav_wreapper">
+                                <span>
+                                    <i class="fas fa-share-alt"></i>
+                                </span>
+                                <div class="nav">
                                     <nav>
-                                        <a href="{{ $links['facebook'] }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="{{ $links['linkedin'] }}" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="{{ $links['telegram'] }}" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                                        <a href="{{ $links['whatsapp'] }}" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                        <a href="javascript:void(0)" title="Copy Link" id="copy-link"><i class="fas fa-link"></i></a>
+                                        <a href="{{ $links['facebook'] }}" target="_blank"><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ $links['linkedin'] }}" target="_blank"><i
+                                                class="fab fa-linkedin"></i></a>
+                                        <a href="{{ $links['telegram'] }}" target="_blank"><i
+                                                class="fab fa-telegram-plane"></i></a>
+                                        <a href="{{ $links['whatsapp'] }}" target="_blank"><i
+                                                class="fab fa-whatsapp"></i></a>
+                                        <a href="javascript:void(0)" title="Copy Link" id="copy-link"><i
+                                                class="fas fa-link"></i></a>
                                     </nav>
                                 </div>
-                               
+
                             </div>
-                       </div>
+                        </div>
                     </div>
                     <div class="col-3 p-0">
                         <div class="" id="appy_button">
                             <a href="{{ route('basic-information', $career->slug) }}" class=" float-end">
-                                <img style="width: 7rem" src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}" alt="" srcset="">
+                                <img style="width: 7rem"
+                                    src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}" alt=""
+                                    srcset="">
                             </a>
                         </div>
                     </div>
@@ -279,10 +287,10 @@
 @endsection
 
 @section('js-script')
-<script>
-    $('a#copy-link').click(function() {
-        navigator.clipboard.writeText(window.location.href);
-        toast('success', 'Copy in Clipboard!');
-    })
-</script>
+    <script>
+        $('a#copy-link').click(function() {
+            navigator.clipboard.writeText(window.location.href);
+            toast('success', 'Copy in Clipboard!');
+        })
+    </script>
 @endsection
