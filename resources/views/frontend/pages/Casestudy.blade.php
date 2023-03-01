@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| CASE STUDY')
+
 @section('container')
     <div class="casestudy nav-top">
         <div class="slider  text-center position-relative"

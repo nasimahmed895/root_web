@@ -1,18 +1,21 @@
 @extends('frontend.app')
+
+@section('title', '| HOME')
+
 @section('container')
     <div class="nav-top bg-video-wrap p-0 m-0">
         <video src="{{ asset('/public/frontend/video/video.mp4') }}" loop muted autoplay>
         </video>
         <div class="overlay">
         </div>
-        <div class="slidcont ">
-            <h2 class=" fbold"> We Create Software for a Sustainable Future. </h2>
+        <div class="objective">
+            <h2 class="fbold">{{ get_option('objective_part_one') }} <span class="multiText">Software</span>{{ get_option('objective_part_two') }}</h2>
             <h5 class="f500">We execute our ideas from the start to finish</h5>
         </div>
         </h1>
     </div>
 
-    <div class=" index">
+    <div class="index">
         <div class="">
             <div class="pt-4 pb-5 card_conatiner services text-center">
                 <div class="container">
@@ -421,4 +424,19 @@
     </section>
 
     <!-- our  team -->
+@endsection
+
+@section('js-script')
+<script>
+    const objectives = @json(get_option('objectives')).split(',');
+    var typed = new Typed(".multiText", {
+        strings: ['', ...objectives],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        startDelay: 1000,
+        backDelay: 1500,
+        cursorChar: '|',
+    })
+</script>
 @endsection

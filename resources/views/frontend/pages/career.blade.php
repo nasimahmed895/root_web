@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| CAREER')
+
 @section('container')
     <div class="bg-image-wrap career">
         <div class="bg-image"></div>

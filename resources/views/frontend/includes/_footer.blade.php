@@ -4,7 +4,7 @@
             style="background-image: url({{ asset('/public/frontend/Icon_Images/contact-header.jpg') }});">
             <div class="bg-color ">
                 <div class="book_meeting">
-                    <span>Book a Meeting With Us, and Let's Discuss</span>
+                    <span>`Book a Meeting With Us, and Let's Discuss`</span>
                     <a href="{{ route('contact_us') }}">
                         <img src="{{ asset('/public/frontend/Icon_Images/Contact.png') }}" alt="">
                     </a>
@@ -31,13 +31,15 @@
                     </div>
                     <div class="office_time mt-4">
                         <ul class="p-0">
-                            @foreach (json_decode(get_option('phone')) as $phones)
-                                <li><a class="text-white" href="tel: {{ $phones->phone }}">
-                                        <img style="width: 25px ; margin-right: 5px; margin-left: 0"
-                                            src="{{ asset('public/' . $phones->image) }}" alt="" sizes=""
-                                            srcset=""> 01794-780707
-                                    </a></li>
-                            @endforeach
+                            @if (get_option('phone') != null)
+                                @foreach (json_decode(get_option('phone')) as $phones)
+                                    <li><a class="text-white" href="tel: {{ $phones->phone ?? '' }}">
+                                            <img style="width: 25px ; margin-right: 5px; margin-left: 0"
+                                                src="{{ asset('public/' . $phones->image) ?? '' }}" alt=""
+                                                sizes="" srcset=""> 01794-780707
+                                        </a></li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
 
@@ -63,7 +65,7 @@
                     <div class="mb-5"><span class="tbold">Follow Us</sp>
                     </div>
 
-                    <div class="row text-center socalmedeya" style="margin: -17px">
+                    <div class="row text-center social-media">
 
                         <div class=" icon col col-md-3">
                             <a href="{{ get_option('facebook') }}" target="_blank"><i

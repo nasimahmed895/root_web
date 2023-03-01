@@ -1,5 +1,7 @@
 @extends('frontend.app')
 
+@section('title', '| CONTACT')
+
 @section('container')
     <div class="slider contact_us nav-top text-center"
         style="background-image:url({{ asset('/public/frontend/Icon_Images/ezgif.com-gif-maker.jpg') }})">
@@ -331,7 +333,8 @@
         </div>
     </div>
 @endsection
-@section('javascript')
+
+@section('js-script')
     <script>
         var meeting = null;
         var date_click = false;

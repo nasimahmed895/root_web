@@ -1,6 +1,17 @@
 @extends('frontend.app')
+
+@section('title', '| JOB DETAILS')
+
+@php
+    $links = Share::page($current, $career->title)
+        ->facebook()
+        ->telegram()
+        ->linkedin()
+        ->whatsapp()
+        ->getRawLinks();
+@endphp
 @section('container')
-    <style>
+    {{-- <style>
         #show-menu .share_button .fa-facebook-square {
             background-image: url({{ asset('/public/frontend/Icon_Images/share/facebook.png') }});
             width: 60px;
@@ -85,7 +96,7 @@
             height: 60px;
             width: 60px;
         }
-    </style>
+    </style> --}}
     <div class="casestudy nav-top">
         <div class="slider  text-center position-relative"
             style="background-image:url({{ asset('/public/frontend/Icon_Images/JobDetails/abstract-digital-grid-black-background.jpg') }}); height: 325px;">
@@ -106,7 +117,7 @@
                 <div class="row m-auto ">
                     <div class="col-9 p-0 d-flex align-items-center">
                         <h3 class=" float-start">{{ $career->title }}</h3>
-                        <div class="share_wraper float-start position-relative">
+                        {{-- <div class="share_wraper float-start position-relative">
                             <div class="menu">
                                 <input type="checkbox" id="toggle" class="d-none" />
                                 <label id="show-menu" for="toggle">
@@ -119,58 +130,71 @@
                                     </div>
 
                                     <div class="share_button">
-                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/linkedin.png') }}"
-                                            alt="" srcset="">  --}}
                                         {!! Share::page($current, $career->title)->linkedin() !!}
                                     </div>
 
                                     <div class="share_button">
-                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/telegram.png') }}"
-                                            alt="" srcset="">  --}}
                                         {!! Share::page($current)->telegram() !!}
                                     </div>
 
                                     <div class="share_button">
-                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/twitter.png') }}"
-                                            alt="" srcset="">  --}}
                                         {!! Share::page($current)->twitter() !!}
                                     </div>
-                                    <div class="share_button">
-                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/whatsapp.png') }}"
-                                            alt="" srcset="">  --}}
-                                        {!! Share::page($current)->whatsapp() !!}
 
+                                    <div class="share_button">
+                                        {!! Share::page($current)->whatsapp() !!}
                                     </div>
+
                                     <div class="share_button ">
                                         <img onclick="myFunction()"
                                             src="{{ asset('/public/frontend/Icon_Images/share/copy.png') }}" alt=""
                                             srcset="">
                                         <input type="text" value="qqqq" class="d-none" id="myInput">
-
+                                    </div>
                                 </label>
                             </div>
+                        </div> --}}
+                        <div id="share_button">
+                            <div class="share">
+                                <span>
+                                    <i class="fas fa-share-alt"></i>
+                                </span>
+                                <div class="nav">
+                                    <nav>
+                                        <a href="{{ $links['facebook'] }}" target="_blank"><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ $links['linkedin'] }}" target="_blank"><i
+                                                class="fab fa-linkedin"></i></a>
+                                        <a href="{{ $links['telegram'] }}" target="_blank"><i
+                                                class="fab fa-telegram-plane"></i></a>
+                                        <a href="{{ $links['whatsapp'] }}" target="_blank"><i
+                                                class="fab fa-whatsapp"></i></a>
+                                        <a href="javascript:void(0)" title="Copy Link" id="copy-link"><i
+                                                class="fas fa-link"></i></a>
+                                    </nav>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 p-0">
+                        <div class="" id="appy_button">
+                            <a href="{{ route('basic-information', $career->slug) }}" class=" float-end">
+                                <img style="width: 7rem"
+                                    src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}" alt=""
+                                    srcset="">
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-3 p-0">
-
-
-                    <div class="" id="appy_button">
-                        <a href="{{ route('basic-information', $career->slug) }}" class=" float-end"><img
-                                style="width: 7rem" src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}"
-                                alt="" srcset=""></a>
-                    </div>
-                </div>
             </div>
-
         </div>
         <div class="details">
             <h6><span class="root">Root</span><span class="Devs">Devs.</span> <span
                     style="color: #a59898">{{ $career->address }}</span></h6>
         </div>
-        <div class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
-            <div class=" col-6 col-md-3  border-bottom ">
+        <div id="job-attr" class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
+            <div class="col-6 col-md-3  border-bottom">
                 <p>Experience</p>
                 <h5 class="m-0">{{ $career->experience }}</h5>
             </div>
@@ -178,11 +202,11 @@
                 <p>Work Level</p>
                 <h5 class="m-0">{{ $career->work_level }}</h5>
             </div>
-            <div class=" col-6 col-md-3  border-bottom ">
+            <div class="col-6 col-md-3  border-bottom">
                 <p>Employee Type</p>
                 <h5 class="m-0">{{ $career->job_time }}</h5>
             </div>
-            <div class=" col-6 col-md-3  border-bottom ">
+            <div class="col-6 col-md-3  border-bottom">
                 <p>Offer Salary</p>
                 <h5 class="m-0">{{ $career->salary }}</h6>
             </div>
@@ -261,5 +285,12 @@
         </div>
     </div>
 @endsection
-@section('javascript')
+
+@section('js-script')
+    <script>
+        $('a#copy-link').click(function() {
+            navigator.clipboard.writeText(window.location.href);
+            toast('success', 'Copy in Clipboard!');
+        })
+    </script>
 @endsection

@@ -1,4 +1,7 @@
 @extends('frontend.app')
+
+@section('title', '| HIRE DEDITACED TEAM')
+
 @section('container')
     <div class="cover position-relative"
         style="background-image: url({{ asset('/public/frontend/Icon_Images/businesspeople-celebrating-success.png') }});">

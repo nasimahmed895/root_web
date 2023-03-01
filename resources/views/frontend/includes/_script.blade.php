@@ -14,18 +14,12 @@
 <script src="{{ asset('/public/frontend/js/script.js') }}"></script>
 <!-- Dropify  -->
 <script src="{{ asset('/public/backend/assets/plugins/dropify/dropify.min.js') }}"></script>
-<!-- Dropify  -->
+<!-- Toster  -->
 <script src="{{ asset('/public/backend/assets/plugins/toastr/toastr.js') }}"></script>
 
 <script>
-    {{--  $('.dropify').dropify();  --}}
-    $(document).ready(function() {
-        $("#loder").fadeOut("slow");
-    });
-    let loder = document.querySelector('#loder');
     window.onload = function() {
-        loder.style.display = 'none ';
-
+        $('div#loader').fadeOut("slow");
     }
 
     function toast(result, message) {
@@ -38,19 +32,15 @@
         });
     }
 
-
     @if (Session::has('success'))
-
         toast('success', '{{ session('success') }}');
     @endif
+
     @if (Session::has('error'))
         toast('error', '{{ session('error') }}');
     @endif
+    
     @foreach ($errors->all() as $error)
         toast('error', '{{ $error }}');
     @endforeach
 </script>
-
-</body>
-
-</html>

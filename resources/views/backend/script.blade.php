@@ -1,10 +1,15 @@
-{{--  yajra datatable  --}}
+{{--  jQuery & jQueryUI  --}}
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
 <!-- Dropify  -->
 <script src="{{ asset('/public/backend/assets/plugins/dropify/dropify.min.js') }}"></script>
 <!-- Dropify  -->
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+{{-- Tag It --}}
+<script src="{{ asset('/public/backend/assets/plugins/tag-it/js/tag-it.js') }}"></script>
 
 <script src="{{ asset('/public/backend/assets/js/app.js') }}"></script>
 
@@ -24,7 +29,6 @@
 <script src="{{ asset('/public/backend/assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
 <script src="{{ asset('/public/backend/assets/js/plugins/chartjs.min.js') }}"></script>
 <script src="{{ asset('/public/backend/assets/js/argon-dashboard.min.js?v=2.0.4') }}"></script>
-
 
 <script>
     //dropify

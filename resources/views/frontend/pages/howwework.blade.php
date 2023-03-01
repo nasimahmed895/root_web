@@ -1,9 +1,12 @@
 @extends('frontend.app')
+
+@section('title', '| HOW WE WORK')
+
 @section('container')
     <div class=" work card_bg nav-top">
         <div class="container">
             <section class="pt-5 text-center heading ">
-                <h3 class="my-4">Engagement Models</h3>
+                <h2 class="my-4">Engagement Models</h2>
                 <p class="mb-5 mt-5 ">We provide a distinctive method of service delivery. <br>
                     This has supported us in two ways with our engagement models...</p>
             </section>

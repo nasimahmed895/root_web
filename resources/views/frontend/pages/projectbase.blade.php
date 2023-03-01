@@ -1,8 +1,10 @@
 @extends('frontend.app')
+
+@section('title', '| PROJECT BASED')
+
 @section('container')
     <div class="cover position-relative"
         style="background-image: url({{ asset('/public/frontend/Icon_Images/full-growth-group-happy-young-business-people_252847-30053.jpg') }});">
-        <!-- <div class="extra" style="padding-top: 65px;"></div> -->
         <div class="bgclor hire_team ">
             <h2 class="text-white text-center mb-1">Project-Based solutions Implementation
 

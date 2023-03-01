@@ -33,6 +33,10 @@ body, .card .card-body {
     box-shadow: inset 0 0 3px #11111100;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0rem;
+}
+
 .page-item:first-child .page-link {
     width: 70px;
     border-top-left-radius: var(--bs-pagination-border-radius) !important;
