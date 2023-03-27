@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use DataTables;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use DataTables;
 
 class ApplyFromController extends Controller
 {
@@ -90,10 +90,5 @@ class ApplyFromController extends Controller
         $file_path = public_path('uploads/file/application/' . $file);
         // return Response::download($file_path);
         return response()->download($file_path);
-    }
-
-    public function chack()
-    {
-        return view('backend.pages.multi_datatable');
     }
 }

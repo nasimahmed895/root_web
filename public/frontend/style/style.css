@@ -385,6 +385,7 @@ video {
     width: 100%;
     height: auto;
     z-index: 1;
+    margin-top: 50px;
 }
 
 .overlay {
@@ -402,7 +403,7 @@ video {
     text-align: center;
     color: #fff;
     position: absolute;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -421,15 +422,17 @@ div.card_conatiner h3:first-child {
 }
 
 div.card_conatiner .card {
-    box-shadow: 0px 0px 13px -4px #0000007a !important;
+  box-shadow: 2px 3px 8px 2px #da94a347 !important;
+  border: none;
+    border-radius: 10px;
+    border-radius: 8px;
     transition: .2s all ease-in-out;
     text-align: center;
     margin-top: 10px;
-    border-radius: 0;
     margin-bottom: 10px;
     width: 300px;
     margin: 0 auto;
-    border: none;
+   
 }
 
 div.card_conatiner .card:hover {
@@ -545,6 +548,12 @@ div#counters_1\  {
 }
 
 /* index slider */
+img.img_responsive.slider_image_content {
+    border: 0px;
+    height: 430px;
+}
+
+
 .rotate_width {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -632,13 +641,14 @@ div#counters_1\  {
 
 
 .round .wrapper .item p {
-    position: absolute;
-    top: 207px;
+position: absolute;
+    top: 160px;
     color: black;
     font-size: 1rem;
     display: none;
     margin-left: 418px;
     width: 235px;
+    left: -345%;
 }
 
 
@@ -904,7 +914,8 @@ div.client_info2 {
     font-size: 1rem;
     text-align: center;
     font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
-    box-shadow: 0px 0px 13px -4px #0000007a;
+box-shadow: 2px 3px 8px 2px #da94a347 !important;
+  border-radius: 8px;
     line-height: 20px;
     margin: 30px;
     font-weight: 500;
@@ -922,7 +933,9 @@ div.client_info2 {
     height: 100px;
 
 }
-
+.single_client .d-grid p{
+    font-size: .8rem;
+} 
 
 
 .client_image2 img {
@@ -931,7 +944,7 @@ div.client_info2 {
     height: 90%;
     margin-left: auto;
     margin-right: auto;
-
+    box-shadow: 0 0px 5px -2px #da94a3;
 }
 
 .client_image2 span#client_name {
@@ -988,9 +1001,9 @@ div.client_info2 {
 }
 
 .word_with .word_grid .work_div h1 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-top: 15px;
+      font-size: .9rem;
+    font-weight: 100;
+    margin-top: 10px;
     text-transform: uppercase;
 }
 
@@ -1104,6 +1117,7 @@ div.member:hover .team_image {
 .book_meeting_banner {
     width: 100%;
     background-size: cover;
+    background-position: center;
     height: 300px;
 }
 
@@ -1243,6 +1257,10 @@ footer .icon {
 }
 
 /* about start */
+.abotu_hed_content{
+    display: flex;
+    align-items: center;
+}
 .root {
     color: #F91E4E;
     font-weight: bold;
@@ -1266,6 +1284,7 @@ footer .icon {
     background-position: center center;
     color: white;
     object-fit: cover;
+    height: 75vh;
 }
 
 .leadership_image img {
@@ -1511,7 +1530,7 @@ footer .icon {
 
 /*  hire_dedicate_team*/
 .cover {
-    height: 100vh;
+    height: 75vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2069,6 +2088,12 @@ footer .icon {
 
 /* map */
 /* form */
+.basicinformation .heding_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        background-color: #3f3f89c2;
+}
 .contact_us .input-group,
 .basicinformation .input-group {
     border: 1px solid rgba(0, 0, 64, 0.3);
@@ -2246,7 +2271,7 @@ footer .icon {
 }
 
 .bg-image-wrap.career {
-    height: 85vh;
+    height: 75vh;
 }
 
 .career .bg-image {
@@ -2435,8 +2460,12 @@ input::placeholder {
 .basicinformation .send:hover .icon {
     color: #000040;
 }
+.basicinformation.submit_card{
+    height: auto;
+}
 /* .basicinformation */
 /* how we word */
+
 .work p {
     font-size: 1.1rem;
 }
@@ -2479,6 +2508,8 @@ input::placeholder {
 .word_card .card {
     width: 60%;
     margin-left: 8%;
+    box-shadow: 2px 3px 8px 2px #da94a347 !important;
+  border: none;
 }
 
 .word_card .card.right {
@@ -2557,16 +2588,19 @@ input::placeholder {
 .card-img-top {
     height: auto;
 }
-
+.word_card .card-img-top{
+    height: 220px;
+    object-fit: cover;
+}
 .button_scroll {
     bottom: 75px;
-    right: 75px;
+    right: 20px;
     position: fixed;
     z-index: 9;
     animation: fadeIn 1s;
-    box-shadow: 0px 0px 20px 11px rgb(0 0 0 / 32%);
+    box-shadow: 0px 0px 15px 2px #f91e4e;
     border-radius: 12px;
-    border: 1px solid #f91e4e69;
+    border: none;
 }
 
 @keyframes fadeIn {
@@ -2627,6 +2661,16 @@ div#job-attr p {
     border-radius: 13px;
 }
 
+#appy_button .apply_img, svg {
+    vertical-align: middle;
+    width: 7rem;
+}
+@media only screen and (max-width: 576px) {
+.button_scroll .apply_img, svg {
+    width: 10rem !important;
+}
+}
+
 .job-details_right {
     display: grid;
     grid-template-columns: 65% 35%;
@@ -2666,3 +2710,63 @@ div#job-attr p {
 .objective span.multiText {
     color: #f91d4e;
 }
+
+
+/* dropify */
+/* .dropify-wrapper .dropify-message {
+    top: 0;
+} */
+
+/* job details animation */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap');
+      svg {
+         font-family: 'Hind Siliguri', sans-serif;
+
+    font-weight: 700;
+        position: relative;
+    width: 100%;
+
+      }
+      svg text {
+        text-transform: uppercase;
+        animation: stroke 5s infinite alternate;
+        stroke-width: 2;
+        stroke: red;
+        font-size: 100px;
+            font-family: 'Hind Siliguri', sans-serif;
+
+    /* font-weight: bold; */
+      }
+      @keyframes stroke {
+        0% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: #f91e4e;
+          stroke-dashoffset: 25%;
+          stroke-dasharray: 0 50%;
+          stroke-width: 2;
+        }
+         20% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: #f91e4e;
+        }
+        50% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: #f91e4e;
+        }
+        70% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: #f91e4e;
+        }
+        80% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: #f91e4e;
+          stroke-width: 3;
+        }
+        100% {
+          fill: #f91e4e;
+          stroke: rgba(54, 95, 160, 0);
+          stroke-dashoffset: -25%;
+          stroke-dasharray: 50% 0;
+          stroke-width: 0;
+        }
+      }

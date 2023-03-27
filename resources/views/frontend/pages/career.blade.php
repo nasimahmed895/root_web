@@ -87,13 +87,13 @@
             <h4>Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301182928.png" alt="" srcset=""></div>
+                        src="public/frontend/Icon_Images/Album/08image.png" alt="" srcset=""></div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301183839.png" alt="" srcset=""></div>
+                        src="public/frontend/Icon_Images/Album/06image.png" alt="" srcset=""></div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301193011.png" alt="" srcset=""></div>
+                        src="public/frontend/Icon_Images/Album/07image.jpg" alt="" srcset=""></div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301200524.png" alt="" srcset=""></div>
+                        src="public/frontend/Icon_Images/Album/05image.png" alt="" srcset=""></div>
 
             </div>
         </div>

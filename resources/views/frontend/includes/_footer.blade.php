@@ -1,10 +1,10 @@
 <footer>
     <div class="">
         <section class="book_meeting_banner "
-            style="background-image: url({{ asset('/public/frontend/Icon_Images/contact-header.jpg') }});">
+            style="background-image: url({{ asset('/public/frontend/Icon_Images/Album/21image.png') }});">
             <div class="bg-color ">
                 <div class="book_meeting">
-                    <span>`Book a Meeting With Us, and Let's Discuss`</span>
+                    <span>Book a Meeting With Us, and Let's Discuss</span>
                     <a href="{{ route('contact_us') }}">
                         <img src="{{ asset('/public/frontend/Icon_Images/Contact.png') }}" alt="">
                     </a>

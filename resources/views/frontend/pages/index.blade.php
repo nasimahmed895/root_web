@@ -4,12 +4,25 @@
 
 @section('container')
     <div class="nav-top bg-video-wrap p-0 m-0">
-        <video src="{{ asset('/public/frontend/video/video.mp4') }}" loop muted autoplay>
-        </video>
+        @if ($mobile || $tablet)
+            <video id="myVideo" autoplay="autoplay" muted="loop" loop="loop" playsinline="" data-wf-ignore="true"
+                data-object-fit="cover">
+                <source src="{{ asset('public/video/root-intro.mp4') }}" data-wf-ignore="true" loading="lazy" />
+            </video>
+        @else
+            <video autoplay="autoplay" loop="loop" muted defaultMuted playsinlin id='hls-example'
+                class="video-js vjs-default-skin" style="width:100% ;object-fit: cover; height:100vh" controls>
+                <source type="application/x-mpegURL" id="my-video"
+                    src="https://video.twimg.com/ext_tw_video/1630914417939599360/pu/pl/1280x720/_K551i4GvKrLdv_f.m3u8?variant_version=1&tag=12&container=fmp4">
+            </video>
+        @endif
+
+
         <div class="overlay">
         </div>
-        <div class="objective">
-            <h2 class="fbold">{{ get_option('objective_part_one') }} <span class="multiText">Software</span>{{ get_option('objective_part_two') }}</h2>
+        <div class="objective customheight">
+            <h2 class="fbold">{{ get_option('objective_part_one') }} <span
+                    class="multiText"></span>{{ get_option('objective_part_two') }}</h2>
             <h5 class="f500">We execute our ideas from the start to finish</h5>
         </div>
         </h1>
@@ -61,33 +74,33 @@
                                 <div class="border_wreaper"></div>
                                 <div id="center" class="wrapper">
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20200325-7690-1w93kuo.png') }}"
-                                            alt="" srcset="">
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/04image.webp') }}"
+                                            alt="" srcset="" height="430px">
                                         <p>iOS App Development</p>
                                     </div>
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/38653ca6395cdd6c637e657784e29099.jpg') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/02image.png') }}"
                                             alt="" srcset="">
                                         <p>Android App Development</p>
                                     </div>
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/51d0ee14fc61a0166c1367f7137f7cba.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/01image.png') }}"
                                             alt="" srcset="">
                                         <p>Hybrid App Development</p>
                                     </div>
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20191227-21326-16l2knt.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/03image.png') }}"
                                             alt="" srcset="">
                                         <p>Food Delivery App</p>
                                     </div>
 
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/06image.webp') }}"
                                             alt="" srcset="">
                                         <p>Tracking App</p>
                                     </div>
                                     <div class="item"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/05image.png') }}"
                                             alt="" srcset="">
                                         <p>E-commerce App Development</p>
                                     </div>
@@ -98,7 +111,7 @@
                 </div>
                 <div class="d-flex justify-content-center align-items-center slider_content content_img">
                     <div class="slider_img h-100">
-                        <img class=" img_responsive " style="border: 0px; height: 100%;"
+                        <img class=" img_responsive slider_image_content"
                             src="{{ asset('/public/frontend/Icon_Images/mobile-app-development.png') }}" alt=""
                             srcset="">
                     </div>
@@ -123,8 +136,8 @@
 
                 <div class="  d-flex justify-content-center align-items-center slider_content">
                     <div class="slider_img h-100">
-                        <img class=" img_responsive " style="border: 0px; height: 100%;"
-                            src="{{ asset('/public/frontend/Icon_Images/web-development.png') }}" alt=""
+                        <img class=" img_responsive slider_image_content"
+                            src="{{ asset('public/frontend/Icon_Images/web-development.png') }}" alt=""
                             srcset="">
                     </div>
                 </div>
@@ -135,33 +148,33 @@
                                 <div class="border_wreaper2"></div>
                                 <div id="center2" class="wrapper2">
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/01image.png') }}"
                                             alt="" srcset="">
                                         <p>E-commerce Apps</p>
                                     </div>
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20200325-7690-1w93kuo.png') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/02image.jpg') }}"
                                             alt="" srcset="">
                                         <p>Web Design</p>
                                     </div>
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/38653ca6395cdd6c637e657784e29099.jpg') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/04image.jpg') }}"
                                             alt="" srcset="">
                                         <p>Web Development</p>
                                     </div>
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/51d0ee14fc61a0166c1367f7137f7cba.png') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/05image.jpg') }}"
                                             alt="" srcset="">
                                         <p>PHP Development</p>
                                     </div>
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20191227-21326-16l2knt.png') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/03image.jpg') }}"
                                             alt="" srcset="">
                                         <p>Laravel Development</p>
                                     </div>
 
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/web App Development/06image.png') }}"
                                             alt="" srcset="">
                                         <p>Web Portal's</p>
                                     </div>
@@ -185,7 +198,7 @@
                 <div class="row justify-content-around w-100 " id="counters_2">
                     <div class="col-6 col-sm-3">
                         <div class="coun_cus">
-                            <div class="counter count_number" data-TargetNum="144" data-Speed="5000">0</div>
+                            <div class="counter count_number" data-TargetNum="158" data-Speed="5000">0</div>
                             <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                 style=" width: 50%;  background-repeat: no-repeat;
                         background-size: 100% auto;"
@@ -200,7 +213,7 @@
                     <div class="col-6 col-sm-3 ">
                         <div class="coun_cus">
                             <div class="hover">
-                                <div class="counter count_number" data-TargetNum="37" data-Speed="5000">0</div>
+                                <div class="counter count_number" data-TargetNum="58" data-Speed="5000">0</div>
                                 <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                     style=" width: 50%;  background-repeat: no-repeat;
                         background-size: 100% auto;"
@@ -214,7 +227,7 @@
                     </div>
                     <div class="col-6 col-sm-3 ">
                         <div class="coun_cus">
-                            <div class="counter count_number" data-TargetNum="17" data-Speed="2000">0</div>
+                            <div class="counter count_number" data-TargetNum="12" data-Speed="2000">0</div>
                             <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                 style=" width: 50%;  background-repeat: no-repeat;
                         background-size: 100% auto;"
@@ -228,7 +241,7 @@
                     </div>
                     <div class="col-6 col-sm-3 ">
                         <div class="coun_cus">
-                            <div class="counter count_number" data-TargetNum="14" data-Speed="2000">0</div>
+                            <div class="counter count_number" data-TargetNum="5" data-Speed="2000">0</div>
                             <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                 style=" width: 50%;  background-repeat: no-repeat;
                     background-size: 100% auto;"
@@ -289,7 +302,7 @@
 
             <section class="client_think2 mt-3 client" style="width: 90% !important; margin: auto;">
 
-                
+
 
                 @foreach ($client as $clients)
                     <div class="single_client ">
@@ -427,16 +440,27 @@
 @endsection
 
 @section('js-script')
-<script>
-    const objectives = @json(get_option('objectives')).split(',');
-    var typed = new Typed(".multiText", {
-        strings: ['', ...objectives],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        startDelay: 1000,
-        backDelay: 1500,
-        cursorChar: '|',
-    })
-</script>
+    <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+    <script>
+        var player = videojs('hls-example', {
+            autoplay: true,
+            muted: true,
+            loop: true,
+            fullscreen: true
+        });
+        player.play();
+    </script>
+
+    <script>
+        const objectives = @json(get_option('objectives')).split(',');
+        var typed = new Typed(".multiText", {
+            strings: ['', ...objectives],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            startDelay: 1000,
+            backDelay: 1500,
+            cursorChar: '|',
+        })
+    </script>
 @endsection

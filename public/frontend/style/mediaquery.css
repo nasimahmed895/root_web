@@ -1,5 +1,4 @@
 @media (min-width: 1920px) {
-
     .rotate_width {
         width: 1199px;
         margin: 0 auto;
@@ -13,13 +12,13 @@
         margin-right: -90px;
     }
 
-    .navbar>.container,
-    .navbar>.container-fluid,
-    .navbar>.container-lg,
-    .navbar>.container-md,
-    .navbar>.container-sm,
-    .navbar>.container-xl,
-    .navbar>.container-xxl {
+    .navbar > .container,
+    .navbar > .container-fluid,
+    .navbar > .container-lg,
+    .navbar > .container-md,
+    .navbar > .container-sm,
+    .navbar > .container-xl,
+    .navbar > .container-xxl {
         width: 1920px;
     }
 
@@ -30,7 +29,6 @@
 }
 
 @media (max-width: 1199px) {
-
     .touch img {
         margin: auto;
     }
@@ -53,11 +51,9 @@
         width: 15rem;
         margin-left: 0;
     }
-
 }
 
 @media (min-width: 992px) {
-
     .navbar-toggler {
         display: none;
     }
@@ -121,9 +117,34 @@
 }
 
 @media (max-width: 991px) {
-
+    .navbar-toggler {
+        float: right;
+    }
+    .navbar > .container,
+    .navbar > .container-fluid,
+    .navbar > .container-lg,
+    .navbar > .container-md,
+    .navbar > .container-sm,
+    .navbar > .container-xl,
+    .navbar > .container-xxl {
+        text-align: center;
+        display: flow-root;
+    }
+    .navbar-brand img {
+        margin-top: 6px;
+        margin-left: 20px;
+    }
     br {
         display: none;
+    }
+    .about .slider,
+    .casestudy .slider,
+    .contact_us.slider,
+    .basicinformation {
+        height: 50vh;
+    }
+    .bg-image-wrap.career {
+        height: 50vh;
     }
 
     .client_info {
@@ -165,7 +186,6 @@
         padding: o;
         margin: 0;
         padding: 0;
-
     }
 
     .navbar-nav .dropdown-item:focus,
@@ -198,7 +218,7 @@
     }
 
     .navbar-nav .nav-item:hover .nav-link,
-    .navbar-nav .show>.nav-link {
+    .navbar-nav .show > .nav-link {
         margin-top: 0px;
     }
 
@@ -246,7 +266,9 @@
 
     video {
         width: 100%;
+        object-fit: cover;
         height: auto;
+        margin-top: 50px;
     }
 
     video {
@@ -264,7 +286,13 @@
     .bg-video-wrap .objective {
         height: 50%;
     }
-
+    .bg-video-wrap .customheight {
+        height: fit-content;
+        top: 15%;
+        display: grid;
+        justify-content: space-around;
+        align-items: center;
+    }
     .contant {
         text-align: center;
     }
@@ -285,7 +313,7 @@
     }
 
     .navbar-collapse {
-        margin-top: -2px;
+        margin-top: 25px;
         background-color: #fff;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -369,7 +397,7 @@
         font-size: 1.2rem;
         margin-bottom: 10px;
         width: 25%;
-        font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
+        font-family: "Segoe UI Local", "Segoe UI Web (West European)";
     }
 
     .work .card.right a {
@@ -378,7 +406,7 @@
         bottom: -80px;
         font-size: 1.2rem;
         margin-bottom: 10px;
-        font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
+        font-family: "Segoe UI Local", "Segoe UI Web (West European)";
     }
 
     .work .card a:hover {
@@ -429,6 +457,9 @@
     .details ul li {
         font-size: 1rem;
     }
+    img.img_responsive.slider_image_content {
+        height: 300px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -447,8 +478,11 @@
 }
 
 @media screen and (max-width: 768px) {
-
     /* index slider  */
+
+    .slider_content .slider {
+        margin-left: -57px;
+    }
     .round .wrapper .item.active img {
         width: 150px;
         height: 150px;
@@ -466,10 +500,10 @@
         margin-right: 200px;
     }
 
-    .round .wrapper .item p {
+    /* .round .wrapper .item p {
         top: 200px;
         margin-right: 200px;
-    }
+    } */
 
     .bg-video-wrap .objective h2,
     .hire_team h2,
@@ -491,6 +525,7 @@
     }
 
     /* index slider  */
+
     .navbar .navbar-brand,
     .navbar .navbar-toggler {
         margin-bottom: 10px;
@@ -561,12 +596,10 @@
 
     .grid-casestudy {
         grid-template-columns: repeat(1, 1fr);
-
     }
 
     .grid-casestudy .right_image {
         grid-row: 1/-1;
-
     }
 
     .grid-casestudy .cs_content {
@@ -579,15 +612,15 @@
     }
 
     .job-list-item:hover {
-        border-left: 0px solid #FA2654;
+        border-left: 0px solid #fa2654;
     }
 
     .job-list-item .right button:hover {
-        background-color: #FA2654;
+        background-color: #fa2654;
     }
 
     .job-list-item:hover .middle {
-        border-left: 2px solid #FA2654;
+        border-left: 2px solid #fa2654;
     }
 
     .navbar-toggler-icon {
@@ -604,14 +637,15 @@
     * {
         font-size: 65.5%;
     }
-
+    .dropify-wrapper .dropify-message {
+        top: 0;
+    }
     .nav-top {
         padding-top: 50px;
     }
 
     .leadership_card .card-body {
         width: 160px;
-
     }
 
     .leadership_card .right .card-body {
@@ -640,7 +674,6 @@
     }
 
     .bgclor {
-
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -678,7 +711,6 @@
         font-size: 14px;
         font-weight: 500;
     }
-
 
     /* word with */
     .meet_ledeership .position_set {
@@ -728,7 +760,6 @@
     footer .wrapper ul li a,
     footer .wrapper p strong {
         font-size: 1.6rem;
-
     }
 
     footer .wrapper {
@@ -749,7 +780,6 @@
 
     div.book_meeting span {
         font-size: 1.1rem;
-
     }
 
     .csaction {
@@ -758,7 +788,6 @@
 
     .cover {
         height: 50vh;
-
     }
 
     .mbsc-datepicker-tab.mbsc-datepicker-tab-calendar.mbsc-ios.mbsc-datepicker-tab-active {
@@ -767,7 +796,6 @@
     }
 
     .contact .toggle_button .nav-item .nav-link.left {
-
         width: 12rem !important;
         padding-right: 10px;
         padding-left: 10px;
@@ -775,7 +803,6 @@
     }
 
     .contact .toggle_button .nav-item .nav-link.right {
-
         width: 12rem !important;
         padding-right: 10px;
         padding-left: 10px;
@@ -788,8 +815,6 @@
     }
 
     /*  */
-
-
 
     .mbsc-calendar-controls {
         font-size: 3em !important;
@@ -814,8 +839,7 @@
     .mbsc-ios.mbsc-timegrid-item.mbsc-selected,
     .mbsc-ios.mbsc-timegrid-item:focus,
     .mbsc-ios.mbsc-timegrid-item:hover {
-        font-size: .600em;
-
+        font-size: 0.6em;
     }
 
     .meet_ledeership .leadership_image img {
@@ -839,16 +863,15 @@
         font-size: 11px;
     }
 
-    .job-list-card {
+    /* .job-list-card {
         margin-top: 0px;
-    }
+    } */
 
     .bg-image-wrap.career {
         height: 50vh !important;
     }
 
     .career .bg-image-wrap {
-
         height: 50vh !important;
     }
 
@@ -860,11 +883,9 @@
         height: 50vh;
     }
 
-
     /* grid */
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
-
     }
 
     .grid-item1 {
@@ -883,7 +904,6 @@
 
     .grid-casestudy .left_image {
         grid-row: 1/-1;
-
     }
 
     .mission_wrreaper img {
@@ -900,16 +920,14 @@
     }
 
     .counterbgimg {
-
         background-size: 100% 100%;
     }
 
     .counterbgimg {
-
         background-size: 100% auto;
     }
 
-    div#counters_1\  {
+    div#counters_1\ {
         padding-top: 0px !important;
         padding-bottom: 0px !important;
     }
@@ -920,7 +938,6 @@
 
     .slick-next {
         right: 0px;
-
     }
 
     .work .card a {
@@ -943,7 +960,7 @@
         width: 100%;
     }
 
-    .xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker {
+    .xdsoft_datetimepicker .xdsoft_datepicker.active + .xdsoft_timepicker {
         width: 100%;
         margin-top: 10px;
     }
@@ -958,7 +975,7 @@
         border-bottom: 1px solid #ddd;
     }
 
-    .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div {
+    .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
         margin-bottom: 10px;
         width: 80%;
         margin: 0 auto;
@@ -970,7 +987,6 @@
 
     .index div.card_conatiner .card {
         height: 205px;
-
     }
 
     .social-media {
@@ -1011,12 +1027,18 @@
     .jobdetails .heading_top .details span {
         font-size: 1.1rem;
     }
-
+    .jobdetails h6 span {
+        font-size: 1rem;
+    }
     .details p {
         font-size: 1.1rem !important;
     }
 
     .details ul li {
         font-size: 1.1rem !important;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
     }
 }

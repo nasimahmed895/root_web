@@ -4,9 +4,9 @@
 
 @section('container')
     <div class="about nav-top">
-        <div class="slider   text-center"
-            style="background-image:url({{ asset('/public/frontend/Icon_Images/About\ Us.jpg') }}">
-            <div class="bgclor px20">
+        <div class="slider  text-center"
+            style="background-image:url({{ asset('public/frontend/Icon_Images/Album/15image.png') }}">
+            <div class="bgclor abotu_hed_content">
                 <div class="container">
                     <h2 class="mb-3 f500">Who We Are ?</h2>
                     <p class=" ff-Roboto f100"><span class="root">Root</span><span class="devs">Devs</span> is here to give
@@ -182,16 +182,16 @@
             <h2 class="mb-3">Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h2>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301182928.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/02image.png" alt="" srcset="">
                 </div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301183839.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/01image.png" alt="" srcset="">
                 </div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301193011.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/03image.png" alt="" srcset="">
                 </div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301200524.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/04image.png" alt="" srcset="">
                 </div>
 
             </div>

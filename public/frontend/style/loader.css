@@ -1,136 +1,65 @@
- /* .loder {
-     height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background: #011015;
-     position: fixed;
-     width: 100%;
-     height: 100%;
-     z-index: 999999999999999999;
- }
-
- .ring {
-     width: 120px;
-     height: 120px;
-     border: 0px solid #011015;
-     border-radius: 50%;
-     position: absolute;
-     z-index: 999999999999999999;
-
- }
-
- .ring:nth-child(1) {
-     border-bottom-width: 8px;
-     border-color: rgb(255, 0, 255);
-     animation: rotat1 2s linear infinite;
- }
-
- .ring:nth-child(2) {
-     border-right-width: 8px;
-     border-color: rgb(0, 247, 255);
-     animation: rotat2 2s linear infinite;
- }
-
- .ring:nth-child(3) {
-     border-top-width: 8px;
-     border-color: rgb(0, 255, 13);
-     animation: rotat3 2s linear infinite;
- }
-
- @keyframes rotat1 {
-     0% {
-         transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-     }
-
-     100% {
-         transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-     }
- }
-
- @keyframes rotat2 {
-     0% {
-         transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-     }
-
-     100% {
-         transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-     }
- }
-
- @keyframes rotat3 {
-     0% {
-         transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-     }
-
-     100% {
-         transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-     }
-
- }
-
- .loging {
-     color: white
- } */
-
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 div#loader {
-	display: flex;
+    display: flex;
     position: fixed;
-	height: 100vh;
+    height: 100vh;
+    top: 0;
     width: 100%;
     z-index: 999999999999999999;
-	justify-content: center;
-	align-items: center;
-	background-color: #06091AED;
+    justify-content: center;
+    align-items: center;
+    background-color: #06091aed;
 }
 
 h2#loader-text {
-	font-family: 'Poppins', sans-serif;
-	position: relative;
-	font-size: 3rem;
-	color: rgb(1 3 63);
-	text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    font-size: 3rem;
+    color: rgb(1 3 63);
+    text-transform: uppercase;
     line-height: normal;
 }
 
 h2#loader-text span:nth-child(1) {
-	-webkit-text-stroke: 0.1vw rgb(255 255 255);
-	color: rgb(255 255 255);
+    -webkit-text-stroke: 0.1vw rgb(255 255 255);
+    color: rgb(255 255 255);
+    font-size: 3rem;
 }
 
 h2#loader-text span:nth-child(2) {
-	-webkit-text-stroke: 0.1vw #F91E4E;
-	color: #F91E4E;
+    -webkit-text-stroke: 0.1vw #f91e4e;
+    color: #f91e4e;
 }
 
 h2#loader-text:before {
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	color: #F91E4E;
-	border-right: 2px solid #FFF;
-	overflow: hidden;
-	animation: loader-text 1.5s linear infinite;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #f91e4e;
+    border-right: 2px solid #fff;
+    overflow: hidden;
+    animation: loader-text 1.5s linear infinite;
 }
 
 @keyframes loader-text {
-	0%,
-	10%, 100% {
-		width: 0;
-	}
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
 
-	70%, 90% {
-		width: 50%;
-	}
+    70%,
+    90% {
+        width: 50%;
+    }
 }

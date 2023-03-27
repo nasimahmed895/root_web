@@ -14,8 +14,7 @@
                 <div class="row pb-5">
                     <div class=" col-lg-6 my-5 word_card">
                         <div class="card  b-r-20 border-0">
-                            <img class="card-img-top"
-                                src="{{ asset('/public/frontend/Icon_Images/group-asian-young-creative-happy-people-entrepreneur-business-meeting-office-background-good-leadership-teamwork-lead-success.png') }}"
+                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/16image.png') }}"
                                 alt="Card image cap">
                             <div class="card-body p-4">
                                 <h5 class="card-title">Hire Dedicated Team</h5>
@@ -33,8 +32,7 @@
 
                     <div class=" col-lg-6 my-5 d-flex justify-content-end  word_card">
                         <div class="card  b-r-20 border-0 right">
-                            <img class="card-img-top"
-                                src="{{ asset('/public/frontend/Icon_Images/group-asian-caucasian-young-creative-happy-enjoy-laugh-smile-great-success-emotion-teamwork-people-business-startup-entrepreneur-casual-brainstorm-business-meeting-office-background.png') }}"
+                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/17image.png') }}"
                                 alt="Card image cap">
                             <div class="card-body p-4">
                                 <h5 class="card-title">Project Based</h5>
