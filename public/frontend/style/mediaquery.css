@@ -496,8 +496,8 @@
     }
 
     .round2 .wrapper2 .item2 p {
-        top: 200px;
-        margin-right: 200px;
+        top: 138px;
+        margin-right: 285px;
     }
 
     /* .round .wrapper .item p {
@@ -637,6 +637,9 @@
     * {
         font-size: 65.5%;
     }
+    /* .round2 {
+        margin-left: 18%;
+    } */
     .dropify-wrapper .dropify-message {
         top: 0;
     }
@@ -651,7 +654,9 @@
     .leadership_card .right .card-body {
         right: 170px;
     }
-
+    .address_title {
+        font-size: 1.7rem;
+    }
     p,
     ul li {
         font-size: 1.6rem !important;

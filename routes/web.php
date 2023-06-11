@@ -1,20 +1,23 @@
 <?php
 
+use App\Http\Controllers\Address;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\backend\PageController;
 use App\Http\Controllers\frontend\WebController;
 use App\Http\Controllers\backend\AdminController;
-use App\Http\Controllers\backend\ApplyFromController;
 use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\Install\InstallController;
+use App\Http\Controllers\backend\ApplyFromController;
 use App\Http\Controllers\backend\home\FeaturedController;
 use App\Http\Controllers\backend\Contact\Contactcontroller;
 use App\Http\Controllers\backend\job\JobePositionController;
 use App\Http\Controllers\backend\home\ClientReviewControlller;
 use App\Http\Controllers\frontend\SocialShareButtonsController;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +68,7 @@ Route::middleware(['install'])->group(function () {
             Route::resource('client-review', ClientReviewControlller::class);
             Route::resource('featured', FeaturedController::class);
             Route::resource('admin', AdminController::class);
+            Route::resource('address', Address::class);
             Route::resource('contact-us', Contactcontroller::class);
             Route::get('/download/{image}', [Contactcontroller::class, 'download']);
             Route::get('/chack', [Contactcontroller::class, 'chack']);
@@ -75,7 +79,7 @@ Route::middleware(['install'])->group(function () {
 
             Route::any('general_settings', [SettingController::class, 'general'])->name('general_settings');
             Route::post('general_settings', [SettingController::class, 'store_settings'])->name('general_settings');
-            Route::post('general_settings_phone', [SettingController::class, 'general_settings_phone'])->name('general_settings_phone');
+
 
             Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
             Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -85,6 +89,10 @@ Route::middleware(['install'])->group(function () {
 
 Route::get('/cache', function () {
     cache()->flush();
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
     return redirect()->back()->with('success', _lang('Cache Clear successfully.'));
 });
 

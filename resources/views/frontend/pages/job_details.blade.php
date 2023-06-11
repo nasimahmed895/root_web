@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="details">
-            <h6><span class="root">Root</span><span class="Devs">Devs.</span> <span>{{ $career->address }}</span></h6>
+            {{--  <h6><span class="root">Root</span><span class="Devs">Devs.</span>  --}}
         </div>
         <div id="job-attr" class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
             <div class="col-6 col-md-3  border-bottom">
@@ -96,11 +96,11 @@
             <div class="job-details">
                 <div class="details "><img class="img_responsive"
                         src="{{ asset('/public/frontend/Icon_Images/JobDetails/overview.png') }}" alt=""
-                        srcset="" style="height: 80%"></div>
+                        srcset=""></div>
                 <div class="details">
                     <div class="details_main">
                         <h4 class="mb-4">Overview</h4>
-                        <p class="text-justify">{{ $career->overview }} </p>
+                        <p class="text-justify">{!! $career->overview !!} </p>
                         <br>
                     </div>
                 </div>
@@ -112,12 +112,8 @@
             <div class="job-details_right">
                 <div class="details text">
                     <div class="details_main">
-                        <h4 class="">Job Description</h4>
-                        <ul>
-                            @foreach (json_decode($career->overview_list) as $item)
-                                <li>{{ $item->list }} </li>
-                            @endforeach
-                        </ul>
+                        <h4 class="">Job Responsibilities</h4>
+                        <p class="text-justify">{!! $career->job_requirement !!}</p>
                     </div>
                 </div>
                 <div class="details img"><img class="img_responsive"
@@ -136,28 +132,57 @@
                     <div class="details_main">
                         <h4 class="mb-4">Educational Requirements
                         </h4>
-                        <p>{{ $career->requirements }}</p>
+                        <p>{!! $career->requirement !!}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="">
+        <div class="container">
+            <div class="job-details_right">
+                <div class="details text">
+                    <div class="details_main">
+                        <h4 class="">Compensation & Other Benefits</h4>
+                        <div class="text-justify benefits" style="font-size: 1.1rem;">{!! $career->benefits !!}</div>
+                    </div>
+                </div>
+                <div class="details img"><img class="img_responsive"
+                        src="{{ asset('/public/frontend/Icon_Images/JobDetails/benefits.png') }}" alt=""
+                        srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+    @if ($career->note != '' || $career->note != null)
+        <div class="card_bg">
+            <div class="container ">
+                <div class="">
+                    <div class="details_main py-4 " style="font-size: 17px;margin-left:5%">
+                        <p>{!! $career->note !!}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     </div>
     <div class="container">
         <div class="wreapper text-center py-5">
             <h4>Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/12image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/12image.webp') }}" alt=""
                         srcset="">
                 </div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/10image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/10image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/11image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/11image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/09image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/09image.webp') }}" alt=""
                         srcset="">
                 </div>
 

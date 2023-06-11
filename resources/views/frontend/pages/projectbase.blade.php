@@ -4,7 +4,7 @@
 
 @section('container')
     <div class="cover position-relative mt-5"
-        style="background-image: url({{ asset('/public/frontend/Icon_Images/Album/20image.jpg') }});">
+        style="background-image: url({{ asset('/public/frontend/Icon_Images/Album/20image.webp') }});">
         <div class="bgclor hire_team ">
             <h2 class="text-white text-center mb-1">Project-Based solutions Implementation
 
@@ -69,7 +69,7 @@
                         <div class="col-lg-6 ">
                             <div class="mission_wrreaper overflow-hidden">
                                 <div class="image b-r-20 bgclor overflow-hidden">
-                                    <img src="{{ asset('public/frontend/Icon_Images/Album/18image.png') }}" alt=""
+                                    <img src="{{ asset('public/frontend/Icon_Images/Album/18image.webp') }}" alt=""
                                         srcset="" class="img-fluid b-r-20 ">
                                 </div>
 

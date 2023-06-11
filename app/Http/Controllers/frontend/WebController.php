@@ -82,7 +82,11 @@ class WebController extends Controller
     {
         $current = URL::current();
         $career = Career::where("slug", '=', $id)->first();
-        return view('frontend.pages.job_details', compact('career', 'current'));
+        if ($career != '' && $career != null) {
+            return view('frontend.pages.job_details', compact('career', 'current'));
+        } else {
+            abort(404);
+        }
     }
 
     // Job Apply Form
@@ -169,7 +173,7 @@ class WebController extends Controller
         $contactUs->save();
 
         if (!$request->ajax()) {
-            return redirect('/')->with('success', _lang('Your application has been submitted successfully.'));
+            return redirect('/')->with('success', _lang('Your Meeting has been submitted successfully.'));
         } else {
             return response()->json(['result' => 'success',  'redirect' => route('index'), 'message' => 'Your application has been submitted successfully.']);
         }

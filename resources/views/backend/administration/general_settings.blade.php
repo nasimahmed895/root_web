@@ -80,13 +80,6 @@
                                                     Logo & Icon
                                                 </div>
                                             </li>
-                                            <li class="nav-item" role="presentation">
-                                                <div id="llanfairpwllgwyngyll-left-tab" class="nav-link tab-clickable"
-                                                    role="tab" title="" data-bs-toggle="tab"
-                                                    data-bs-target="#address" aria-controls="address" aria-selected="false">
-                                                    Address
-                                                </div>
-                                            </li>
                                         </ul>
                                     </div>
 
@@ -202,7 +195,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        class="control-label">{{ _lang('linkedin') }}</label>
+                                                                        class="control-label">{{ _lang('Linkedin') }}</label>
                                                                     <input type="text" class="form-control"
                                                                         name="linkedin"
                                                                         value="{{ get_option('linkedin') }}">
@@ -316,10 +309,10 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label
-                                                                            class="control-label">{{ _lang(' viber') }}</label>
+                                                                            class="control-label">{{ _lang(' Linkedin') }}</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="ceo_viber"
-                                                                            value="{{ get_option('ceo_viber') }}"
+                                                                            name="ceo_linkedin"
+                                                                            value="{{ get_option('ceo_linkedin') }}"
                                                                             required>
                                                                     </div>
                                                                 </div>
@@ -396,10 +389,11 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label
-                                                                            class="control-label">{{ _lang(' viber') }}</label>
+                                                                            class="control-label">{{ _lang(' Linkedin') }}</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="co_viber"
-                                                                            value="{{ get_option('co_viber') }}" required>
+                                                                            name="co_linkedin"
+                                                                            value="{{ get_option('co_linkedin') }}"
+                                                                            required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -464,155 +458,38 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div id="address" class="tab-pane fade accordion-item" role="tabpanel">
-                                                    <h5 class="mb-3 header-title card-title">{{ _lang('Address') }}</h5>
-                                                    <form method="post" class="ajax-submit2 params-card"
-                                                        autocomplete="off" action="{{ route('general_settings') }}"
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        class="control-label">{{ _lang(' Address') }}</label>
-                                                                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="4" required>{{ get_option('address') }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        class="control-label">{{ _lang('Open') }}</label>
-                                                                    <textarea class="form-control" name="open" id="exampleFormControlTextarea1" rows="4" required>{{ get_option('open') }}</textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            <div class="col-md-12">
-                                                                <div class="form-group text-right">
-                                                                    <button type="submit" class="btn btn-primary btn-sm">
-                                                                        {{ _lang('Update') }}
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                    <h5 class="mb-3 header-title card-title">
-                                                        {{ _lang('Add New Phone Number') }}</h5>
-                                                    <form method="post" class="" autocomplete="off"
-                                                        action="{{ route('general_settings_phone') }}"
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-                                                        @foreach (json_decode($Setting) as $phone)
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="row field_group my-2">
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="form-group text-right mb-0">
-                                                                                <button
-                                                                                    class="btn btn-danger remove-row btn-sm text-white mt-1 mb-0">-</button>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">Phone</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    name="phone[]"
-                                                                                    value="{{ $phone->phone }}"
-                                                                                    required="" required>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">image</label>
-                                                                                @if ($phone->image != null)
-                                                                                    <input type="file"
-                                                                                        class="form-control dropify"
-                                                                                        name="image[]"
-                                                                                        value="{{ $phone->image }}"
-                                                                                        data-default-file="{{ asset('/public/' . $phone->image) }}"
-                                                                                        required="" required>
-                                                                                @else
-                                                                                    <input type="file"
-                                                                                        class="form-control dropify"
-                                                                                        name="image[]" value=""
-                                                                                        data-default-file=""
-                                                                                        required="" required>
-                                                                                @endif
-
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                        @endforeach
-                                                        <div class="col-md-12 ml-1">
-                                                            <div class="form-group text-right">
-                                                                <button type="button"
-                                                                    class="btn btn-primary add-more btn-sm"
-                                                                    data-team="LR56SVES0">
-                                                                    Add New
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <div class="form-group text-right">
-                                                        <button type="submit" class="btn btn-primary btn-sm">
-                                                            {{ _lang('Update') }}
-                                                        </button>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="d-none">
-                        <div class="field_group repeat col-md-12">
-                            <div class="row my-2">
-                                <div class="col-md-12">
-                                    <div class="form-group text-right mb-0">
-                                        <button class="btn btn-danger remove-row btn-sm text-white mt-1 mb-0">-</button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Phone</label>
-                                        <input type="text" class="form-control" name="phone[]" value=""
-                                            required="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">image</label>
-                                        <input type="file" class="form-control dropify" name="image[]" value=""
-                                            required="" required>
-                                    </div>
-                                </div>
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-@endsection
+    @endsection
 
-@section('javascript')
-    <script type="text/javascript">
-        $('.dropify').dropify();
-        $(document).on('click', '.add-more', function() {
-            var form = $('.repeat').clone().removeClass('repeat');
+    @section('javascript')
+        <script type="text/javascript">
+            $('.dropify').dropify();
+            $(document).on('click', '.add-more', function() {
+                var form = $('.repeat').clone().removeClass('repeat');
 
-            $(this).closest('.col-md-12').before(form);
-        });
-        $(document).on('click', '.remove-row', function() {
-            $(this).closest('.col-md-12').remove();
-        });
+                $(this).closest('.col-md-12').before(form);
+            });
+            $(document).on('click', '.remove-row', function() {
+                $(this).closest('.col-md-12').remove();
+            });
 
-        $('#singleFieldTags').tagit({
-            availableTags: [],
-            // This will make Tag-it submit a single form value, as a comma-delimited field.
-            singleField: true,
-            singleFieldNode: $('#mySingleField')
-        });
-    </script>
-@endsection
+            $('#singleFieldTags').tagit({
+                availableTags: [],
+                // This will make Tag-it submit a single form value, as a comma-delimited field.
+                singleField: true,
+                singleFieldNode: $('#mySingleField')
+            });
+        </script>
+    @endsection

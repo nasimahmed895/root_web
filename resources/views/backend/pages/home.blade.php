@@ -78,21 +78,10 @@
             info: false,
             //pageLength: 1,
 
-            ajax: "{{ route('featured.index') }}",
+            ajax: "{{ route('gallery.index') }}",
             columns: [{
                     data: 'image',
                     name: 'image ',
-
-                },
-
-                {
-                    data: 'heading',
-                    name: 'heading ',
-
-                },
-                {
-                    data: 'text',
-                    name: 'text ',
 
                 },
                 {

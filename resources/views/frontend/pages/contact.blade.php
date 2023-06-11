@@ -362,7 +362,7 @@
                             if (response.redirect != undefined && response.redirect != '') {
                                 window.setTimeout(function() {
                                     window.location.replace(response.redirect)
-                                }, 1000);
+                                }, 3000);
                             }
                         } else {
                             console.log(response)

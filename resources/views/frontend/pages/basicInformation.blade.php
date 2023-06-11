@@ -134,16 +134,16 @@
             <h4>Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/13image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/13image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/15image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/15image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/14image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/14image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/09image.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/09image.webp') }}" alt=""
                         srcset="">
                 </div>
 
@@ -181,7 +181,6 @@
                     return name = false;
                 }
 
-                console.log(name);
 
 
 
@@ -230,13 +229,10 @@
             $("[name=file]").change(function() {
                 var fele_get = this.files[0]
                 var file_extension = fele_get.type;
-                console.log(file_extension)
                 if (file_extension == 'application/pdf' && this != '') {
-                    console.log('file_ok');
                     $('#file_error').css("display", "none");
                     file = true
                 } else {
-                    console.log('file_not');
                     $('#file_error').css("display", "block");
 
                     file = false
@@ -246,7 +242,6 @@
                 e.preventDefault();
 
                 if (file != '') {
-                    console.log('file_ok');
                     $('#file_error').css("display", "none");
                     file = true
                 } else {
@@ -254,9 +249,7 @@
                     file = false
                 }
                 if (numbre_valid && numbre_length && name && email && file) {
-                    console.log('ok');
                     var formData = new FormData(this);
-                    console.log(formData);
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -270,10 +263,15 @@
                         processData: false,
                         cache: false,
                         success: (response) => {
+
                             if (response.result == 'success') {
                                 $(".invalid-tooltip ").addClass('d-none');
                                 this.reset();
-                                toast('success', response.message);
+                                toast('success',
+                                    'Your application has been submitted successfully.')
+                                window.setTimeout(function() {
+                                    window.location.replace(response.redirect)
+                                }, 1000);
                                 if (response.redirect != undefined && response.redirect != '') {
                                     window.setTimeout(function() {
                                         window.location.replace(response.redirect)
@@ -282,16 +280,14 @@
                                 // return true;
                             } else {
                                 console.log(response)
+                                toast('error', response.error);
                             }
                         },
                         error: function(response) {
                             console.log(response);
-                            //$('#file-input-error').text(response.responseJSON.message);
                         }
                     });
-                } else {
-                    console.log('not');
-                }
+                } else {}
 
 
             });

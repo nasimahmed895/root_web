@@ -4,7 +4,7 @@
 
 @section('container')
     <div class="cover position-relative"
-        style="background-image: url({{ asset('public/frontend/Icon_Images/Album/19image.png') }});">
+        style="background-image: url({{ asset('public/frontend/Icon_Images/Album/19image.webp') }});">
         <!-- <div class="extra" style="padding-top: 65px;"></div> -->
         <div class="bgclor  hire_team">
             <h2 class="text-white text-center ">Make Your project Done With
@@ -65,7 +65,7 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-lg-6 ">
                             <div class="client_video image transition b-r-20">
-                                <img src="{{ asset('public/frontend/Icon_Images/Album/10image.png') }}" alt=""
+                                <img src="{{ asset('public/frontend/Icon_Images/Album/10image.webp') }}" alt=""
                                     srcset="" class="img-fluid ">
                             </div>
 

@@ -22,7 +22,8 @@ class ApplyFromController extends Controller
                 ->addColumn('file', function ($files) {
 
                     return '<a target="_blank" href="../public/uploads/file/application/' . $files->file . '"  title="' . $files->file . '" >
-                            View
+                    <button type="button" class="btn btn-outline-secondary"> <i class="far fa-eye"></i></button>
+                           
                         </a>';
                 })
                 ->addColumn('action', function ($apply_form) {

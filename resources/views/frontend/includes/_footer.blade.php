@@ -1,14 +1,14 @@
 <footer>
     <div class="">
         <section class="book_meeting_banner "
-            style="background-image: url({{ asset('/public/frontend/Icon_Images/Album/21image.png') }});">
+            style="background-image: url({{ asset('/public/frontend/Icon_Images/Album/21image.webp') }});">
             <div class="bg-color ">
                 <div class="book_meeting">
                     <span>Book a Meeting With Us, and Let's Discuss</span>
                     <a href="{{ route('contact_us') }}">
                         <img src="{{ asset('/public/frontend/Icon_Images/Contact.png') }}" alt="">
                     </a>
-
+                    <div id="countdown"></div>
                 </div>
             </div>
         </section>
@@ -25,23 +25,26 @@
                     <a href="" class=""><img width="128px"
                             src="{{ asset('public/frontend/Icon_Images/Root Devs.png') }}" alt=""
                             srcset=""></a>
-                    <p class="mt-3">{{ get_option('address') }}</p>
-                    <div class="office_time mt-4">
-                        <p> <strong class="text-white f100">Open: </strong> {{ get_option('open') }}</p>
+                    <div class="row justify-content-center g-2">
+                        @foreach (\App\Models\OfficeAddress::all() as $item)
+                            <div class="col-12 text-center text-sm-start" style="margin-bottom: -15px">
+                                <p class="mt-3 text-center address_title text-sm-start">{{ $item->title }}</p>
+                                <p class="address_address">{{ $item->address }}</p>
+                                <div class="office_time ">
+                                    <ul class="p-0">
+                                        <li><a class="text-white" href="tel: {{ $item->country_code . $item->phone }}">
+                                                <img style="width: 25px ; margin-right: 5px; margin-left: 0"
+                                                    src="{{ asset('public/' . $item->image) ?? '' }}" alt=""
+                                                    sizes="" srcset="">
+                                                {{ $item->country_code . $item->phone }}
+                                            </a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="office_time mt-4">
-                        <ul class="p-0">
-                            @if (get_option('phone') != null)
-                                @foreach (json_decode(get_option('phone')) as $phones)
-                                    <li><a class="text-white" href="tel: {{ $phones->phone ?? '' }}">
-                                            <img style="width: 25px ; margin-right: 5px; margin-left: 0"
-                                                src="{{ asset('public/' . $phones->image) ?? '' }}" alt=""
-                                                sizes="" srcset=""> 01794-780707
-                                        </a></li>
-                                @endforeach
-                            @endif
-                        </ul>
-                    </div>
+
 
                 </div>
                 <div class="col-md-3 wrapper">
@@ -50,7 +53,7 @@
                         <li><a href="{{ route('index') }}">Home</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="{{ route('how_we_work') }}">How We Work</a></li>
-                        <li><a href="{{ route('dedicated_team') }}">Our Team</a></li>
+                        {{--  <li><a href="{{ route('dedicated_team') }}">Our Team</a></li>  --}}
                         <li><a href="{{ route('contact_us') }}">Contact Us</a></li>
                         <li><a href="{{ asset('career') }}">Career</a></li>
                     </ul>
@@ -76,7 +79,8 @@
                                     class="fab fa-linkedin-in"></i></a>
                         </div>
                         <div class="icon  col col-md-3">
-                            <a href="tel:{{ get_option('whatsapp') }}"><i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/{{ get_option('whatsapp') }}" target="_blank"><i
+                                    class="fab fa-whatsapp"></i>
                             </a>
                         </div>
                         <div class="icon  col col-md-3">
@@ -87,7 +91,7 @@
                                     class="fab fa-youtube-square"></i></a>
                         </div>
                         <div class="icon  col col-md-3">
-                            <a href="tel:{{ get_option('skype') }}"><i class="fab fa-skype"></i></a>
+                            <a href="skype:{{ get_option('skype') }}" target="_blank"><i class="fab fa-skype"></i></a>
                         </div>
                         <div class="icon  col col-md-3">
                             <a href="{{ get_option('instagram') }}" target="_blank"><i

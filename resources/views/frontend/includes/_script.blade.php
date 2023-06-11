@@ -28,17 +28,15 @@
         $('div#loader').fadeOut("slow");
     }, 1000);
 
-    @if (Route::is('contact_us'))
-        function toast(result, message) {
-            $.toast({
-                heading: result,
-                text: message,
-                showHideTransition: 'slide',
-                icon: result,
-                position: 'top-right'
-            });
-        }
-    @endif
+    function toast(result, message) {
+        $.toast({
+            heading: result,
+            text: message,
+            showHideTransition: 'slide',
+            icon: result,
+            position: 'top-right'
+        });
+    }
     @if (Session::has('success'))
         toast('success', '{{ session('success') }}');
     @endif

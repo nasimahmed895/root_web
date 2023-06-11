@@ -21,9 +21,9 @@
         <div class="overlay">
         </div>
         <div class="objective customheight">
-            <h2 class="fbold">{{ get_option('objective_part_one') }} <span
+            <h2 class="fbold ">{{ get_option('objective_part_one') }} <span
                     class="multiText"></span>{{ get_option('objective_part_two') }}</h2>
-            <h5 class="f500">We execute our ideas from the start to finish</h5>
+            <h5 class="f500 ">We execute our ideas from the start to finish</h5>
         </div>
         </h1>
     </div>
@@ -41,7 +41,7 @@
                                         src="{{ asset('public/' . $featureds->image) }}" alt="">
                                     <div class="card-body p5">
                                         <p class="card-title">{{ $featureds->heading }}</p>
-                                        <p class="card-text px-3">{{ Str::limit($featureds->text, 140) }}</p>
+                                        <p class="card-text  px-3">{{ Str::limit($featureds->text, 140) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -112,8 +112,7 @@
                 <div class="d-flex justify-content-center align-items-center slider_content content_img">
                     <div class="slider_img h-100">
                         <img class=" img_responsive slider_image_content"
-                            src="{{ asset('/public/frontend/Icon_Images/mobile-app-development.png') }}" alt=""
-                            srcset="">
+                            src="{{ asset('/public/frontend/Icon_Images/app.png') }}" alt="" srcset="">
                     </div>
                 </div>
             </div>
@@ -137,8 +136,7 @@
                 <div class="  d-flex justify-content-center align-items-center slider_content">
                     <div class="slider_img h-100">
                         <img class=" img_responsive slider_image_content"
-                            src="{{ asset('public/frontend/Icon_Images/web-development.png') }}" alt=""
-                            srcset="">
+                            src="{{ asset('public/frontend/Icon_Images/web.png') }}" alt="" srcset="">
                     </div>
                 </div>
                 <div class=" slider_content2 ">
@@ -168,13 +166,13 @@
                                         <p>PHP Development</p>
                                     </div>
                                     <div class="item2"><img
-                                            src="{{ asset('public/frontend/Icon_Images/web App Development/03image.jpg') }}"
+                                            src="{{ asset('public/frontend/Icon_Images/web App Development/03image.webp') }}"
                                             alt="" srcset="">
                                         <p>Laravel Development</p>
                                     </div>
 
                                     <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/web App Development/06image.png') }}"
+                                            src="{{ asset('/public/frontend/Icon_Images/web App Development/06image.webp') }}"
                                             alt="" srcset="">
                                         <p>Web Portal's</p>
                                     </div>
@@ -192,7 +190,7 @@
 
     <!-- counter -->
     <div class="counterbgimg d-block bg mxt-5 "
-        style=" background-image:url('{{ asset('/public/frontend/Icon_Images/counter.png') }}') ;">
+        style=" background-image:url('{{ asset('public/frontend/Icon_Images/counter.png') }}') ;">
         <div id="counters_1 " class="d-flex  text-center  text-white " style="background-color: rgb(0 0 64 / 60%) ;">
             <div class="container">
                 <div class="row justify-content-around w-100 " id="counters_2">
@@ -213,7 +211,7 @@
                     <div class="col-6 col-sm-3 ">
                         <div class="coun_cus">
                             <div class="hover">
-                                <div class="counter count_number" data-TargetNum="58" data-Speed="5000">0</div>
+                                <div class="counter count_number" data-TargetNum="137" data-Speed="5000">0</div>
                                 <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                     style=" width: 50%;  background-repeat: no-repeat;
                         background-size: 100% auto;"
@@ -241,7 +239,7 @@
                     </div>
                     <div class="col-6 col-sm-3 ">
                         <div class="coun_cus">
-                            <div class="counter count_number" data-TargetNum="5" data-Speed="2000">0</div>
+                            <div class="counter count_number" data-TargetNum="6" data-Speed="2000">0</div>
                             <img src="{{ asset('/public/frontend/Icon_Images/Line 1.png') }}"
                                 style=" width: 50%;  background-repeat: no-repeat;
                     background-size: 100% auto;"
@@ -335,68 +333,219 @@
     <div class="word_with text-center py-5">
         <h2 class="f700 ">Technologies We Work With</h2>
 
-        <div class="container">
-            <div class="word_grid mt-5 ">
+        <section class="gallery_content">
+            <div class="container">
+                <div class="row ">
+                    <div class="gallery-filter">
+                        <span class="filter-item active" data-filter="all" onclick="filter_button('all')">All
+                            Technology</span>
+                        <span class="filter-item" data-filter="frontend" onclick="filter_button()">Frontend</span>
+                        <span class="filter-item" data-filter="backend" onclick="filter_button()">Backend</span>
+                        <span class="filter-item" data-filter="mobile" onclick="filter_button()">Mobile
+                            Application</span>
+                        <span class="filter-item" data-filter="database" onclick="filter_button()">Database</span>
+                    </div>
+                </div>
+                <div class="tabe_icon" style="height: 380px;overflow: hidden;">
+                    <div class="row ">
+                        <!-- gallery item start -->
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/ios.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1 style="text-transform: inherit !important">iOS</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/android.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Android</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  shoe">
+                            <div class="gallery-item-inner ">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/flutter.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>FLUTTER</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/mysql.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>MySQL</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database ">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/MongoDB.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>MongoDB</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/redis.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Redis</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/Postgresql.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>PostgreSQL</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/GraphQL.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>GraphQL</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/sqlite.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>SQLite</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  database">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/firebase.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Firebase</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  backend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/php.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>PHP</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item  backend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/laravel.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Laravel</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/java.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>java</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/kotlin.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Kotlin</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/flutter.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Flutter</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item backend ">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/nodejs.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Node.js</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item backend ">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/expressjs.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Express.js</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/swift.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>SwiftUI</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item mobile">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/jetpack.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Jetpack</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/react.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>react</h1>
 
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/flutter.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>FLUTTER</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/ios.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>IOS</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/android.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>ANDROID</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/laravel.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>LARAVEL</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/php.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>PHP</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/veujs.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Vue.js</h1>
 
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/mysql.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>MYSQL</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/swift.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>swift</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/java.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>java</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/react.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>react</h1>
-                </div>
-                <div class="work_div mb-4">
-                    <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/nextjs.svg') }}" alt="flutter"
-                        srcset="">
-                    <h1>nextjs</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/nextjs.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Next.js</h1>
+                            </div>
+                        </div>
 
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/tailwind.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Tailwind</h1>
 
+                            </div>
+                        </div>
+                        <div class="gallery-item  backend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/wocommerce.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>WooCommerce</h1>
+                            </div>
+                        </div>
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/nuxtjs.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Nuxt.js</h1>
+
+                            </div>
+                        </div>
+                        <div class="gallery-item frontend">
+                            <div class="gallery-item-inner">
+                                <img src="{{ asset('/public/frontend/Icon_Images/Technology icons/sass.svg') }}"
+                                    alt="flutter" srcset="">
+                                <h1>Sass</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                    <span id="dots"></span>
                 </div>
-
+                <div>
+                    <button onclick="redmore()" id="myBtn" class="red_button"> Show more...</button>
+                </div>
             </div>
-        </div>
-
+        </section>
         <!-- work with -->
-
     </div>
     <!-- our  team -->
     <section class="text-center border-top ">
@@ -411,7 +560,8 @@
                         object-fit: cover;
                         border-radius: 0;
                        "
-                            src="{{ asset('/public/frontend/Icon_Images/ourteam.png') }}" alt="" srcset="">
+                            src="{{ asset('/public/frontend/Icon_Images/ourteam.webp') }}" alt=""
+                            srcset="">
                     </div>
                 </div>
                 <div class="col-lg-6  d-flex align-items-center justify-content-center">
@@ -450,7 +600,7 @@
         });
         player.play();
     </script>
-
+    <script src="{{ asset('/public/frontend/plugin/js/typed.umd.js') }}"></script>
     <script>
         const objectives = @json(get_option('objectives')).split(',');
         var typed = new Typed(".multiText", {
@@ -461,6 +611,68 @@
             startDelay: 1000,
             backDelay: 1500,
             cursorChar: '|',
-        })
+        });
+
+        // image gallery start
+        const filterContainer = document.querySelector(".gallery-filter"),
+            galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("filter-item")) {
+                // deactivate existing active 'filter-item'
+                filterContainer.querySelector(".active").classList.remove("active");
+                // activate new 'filter-item'
+                event.target.classList.add("active");
+                const filterValue = event.target.getAttribute("data-filter");
+                galleryItems.forEach((item) => {
+                    if (item.classList.contains(filterValue) || filterValue === 'all') {
+                        item.classList.remove("hide");
+                        item.classList.add("show");
+                    } else {
+                        item.classList.remove("show");
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+        // image gallery end
+
+        function filter_button(name) {
+
+            var dots = document.getElementById("dots");
+            var btnText = document.getElementById("myBtn");
+            if (name == undefined) {
+                btnText.style.display = "none";
+
+            } else {
+                btnText.style.display = "inline";
+                document.querySelectorAll(".shwo_less").forEach(function(el) {
+                    el.classList.remove("show")
+                    el.classList.add("hide")
+
+                });
+
+            }
+        }
+
+
+        function redmore() {
+            var dots = document.getElementById("dots");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Show more...";
+                document.querySelector(".tabe_icon").style.height = "380px";
+                document.querySelector(".tabe_icon").style.transition = "height 0.5s ease-in-out";
+                // moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Show less...";
+
+                document.querySelector(".tabe_icon").style.height = "auto";
+                document.querySelector(".tabe_icon").style.transition = "height 0.5s ease-in-out";
+            }
+        }
     </script>
 @endsection

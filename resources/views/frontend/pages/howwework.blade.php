@@ -14,7 +14,7 @@
                 <div class="row pb-5">
                     <div class=" col-lg-6 my-5 word_card">
                         <div class="card  b-r-20 border-0">
-                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/16image.png') }}"
+                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/16image.webp') }}"
                                 alt="Card image cap">
                             <div class="card-body p-4">
                                 <h5 class="card-title">Hire Dedicated Team</h5>
@@ -32,7 +32,7 @@
 
                     <div class=" col-lg-6 my-5 d-flex justify-content-end  word_card">
                         <div class="card  b-r-20 border-0 right">
-                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/17image.png') }}"
+                            <img class="card-img-top" src="{{ asset('public/frontend/Icon_Images/Album/17image.webp') }}"
                                 alt="Card image cap">
                             <div class="card-body p-4">
                                 <h5 class="card-title">Project Based</h5>
