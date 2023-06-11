@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use DataTables;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use DataTables;
 
 class ApplyFromController extends Controller
 {
@@ -22,7 +22,8 @@ class ApplyFromController extends Controller
                 ->addColumn('file', function ($files) {
 
                     return '<a target="_blank" href="../public/uploads/file/application/' . $files->file . '"  title="' . $files->file . '" >
-                            View
+                    <button type="button" class="btn btn-outline-secondary"> <i class="far fa-eye"></i></button>
+                           
                         </a>';
                 })
                 ->addColumn('action', function ($apply_form) {
@@ -90,10 +91,5 @@ class ApplyFromController extends Controller
         $file_path = public_path('uploads/file/application/' . $file);
         // return Response::download($file_path);
         return response()->download($file_path);
-    }
-
-    public function chack()
-    {
-        return view('backend.pages.multi_datatable');
     }
 }

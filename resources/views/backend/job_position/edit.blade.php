@@ -1,4 +1,12 @@
 @extends('backend.app')
+@section('css')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+@endsection
 @section('container')
     <form class="" method="post" autocomplete="off" action="{{ route('job-post.update', $career->id) }}"
         enctype="multipart/form-data">
@@ -19,13 +27,7 @@
                                         required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">{{ _lang('Company Name') }}</label>
-                                    <input type="text" class="form-control" name="company_name"
-                                        value="{{ old('company_name') }} RootDevs" required>
-                                </div>
-                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Location') }}</label>
@@ -42,20 +44,14 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label">{{ _lang('Date') }}</label>
+                                    <label class="control-label">{{ _lang('Expiry Date') }}</label>
                                     <input type="date" class="form-control" name="date" required
                                         value="<?php echo date('Y-m-d', $career->date); ?>" id="datepicker">
 
 
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">{{ _lang('Address') }}</label>
-                                    <input type="text" class="form-control" name="address"
-                                        value="{{ $career->address }}" required>
-                                </div>
-                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Experience') }}</label>
@@ -98,17 +94,6 @@
                                         value="{{ $career->salary }}  " required>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">{{ _lang('Status') }}</label>
-                                    <select class="form-control select2" data-selected="{{ $career->status }}"
-                                        name="status" required>
-                                        <option value="1">{{ _lang('Active') }}</option>
-                                        <option value="0">{{ _lang('In-Active') }}</option>
-                                    </select>
-                                </div>
-                            </div>
-
 
                         </div>
 
@@ -126,42 +111,44 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Overview</label>
-                                    <textarea name="overview" id="" class="w-100" rows="5">{{ $career->overview }}</textarea>
+                                    <textarea name="overview" id="" class="w-100 summernote" rows="5">{!! $career->overview !!}</textarea>
 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label">Educational Requirements</label>
-                                    <textarea name="requirements" id="" class="w-100" rows="5">{{ $career->requirements }}</textarea>
+                                    <label class="control-label">Job Responsibilities</label>
+                                    <textarea name="job_requirement" id="" class="w-100 summernote" rows="5">{!! $career->job_requirement !!}</textarea>
 
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="row field_group my-2">
-                                    @foreach (json_decode($career->overview_list) as $overview_list)
-                                        <div class="col-md-12">
-                                            <div class="form-group text-right">
-                                                <button class="btn btn-danger remove-row btn-sm text-white mt-1">-</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="control-label">Job Requirements:</label>
-                                                <input type="text" class="form-control"
-                                                    value="{{ $overview_list->list }}" name="overview_list[]"
-                                                    value="" required="">
-                                            </div>
-                                        </div>
-                                    @endforeach
+                                <div class="form-group">
+                                    <label class="control-label">Educational Requirement</label>
+                                    <textarea name="requirement" id="" class="w-100 summernote" rows="5">{!! $career->requirement !!}</textarea>
 
                                 </div>
                             </div>
-                            <div class="col-md-12 ml-1">
-                                <div class="form-group text-right">
-                                    <button type="button" class="btn btn-primary add-more btn-sm" data-team="LR56SVES0">
-                                        Add New
-                                    </button>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Compensation & Other Benefits</label>
+                                    <textarea name="benefits" id="" class="w-50 summernote " rows="5">{!! $career->benefits !!}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Note</label>
+                                    <textarea name="note" id="" class="w-50 summernote " rows="5">{!! $career->note !!}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">{{ _lang('Status') }}</label>
+                                    <select class="form-control select2" data-selected="{{ $career->status }}"
+                                        name="status" required>
+                                        <option value="1">{{ _lang('Active') }}</option>
+                                        <option value="0">{{ _lang('In-Active') }}</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -177,35 +164,11 @@
             </div>
         </div>
     </form>
-    <div class="d-none">
-        <div class="field_group repeat col-md-12">
-            <div class="row my-2">
-                <div class="col-md-12">
-                    <div class="form-group text-right">
-                        <button class="btn btn-danger remove-row btn-sm text-white mt-1">-</button>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="text" class="form-control" value="{{ old('overview_list[]') }}"
-                            name="overview_list[]" required="">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
 @endsection
 @section('javascript')
     <script type="text/javascript">
-        $(document).on('click', '.add-more', function() {
-            var form = $('.repeat').clone().removeClass('repeat');
-            form.find('.image').dropify();
-            $(this).closest('.col-md-12').before(form);
-        });
-
-        $(document).on('click', '.remove-row', function() {
-            $(this).closest('.field_group').remove();
+        $('.summernote').summernote({
+            height: 200
         });
     </script>
 @endsection

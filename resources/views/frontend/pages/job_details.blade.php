@@ -10,102 +10,18 @@
         ->whatsapp()
         ->getRawLinks();
 @endphp
+
 @section('container')
-    {{-- <style>
-        #show-menu .share_button .fa-facebook-square {
-            background-image: url({{ asset('/public/frontend/Icon_Images/share/facebook.png') }});
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60px 60px;
-            margin-left: -31px;
-            margin-top: 25px;
-        }
 
-        #show-menu .share_button .fa-facebook-square:before {
-            content: "\f082";
-            display: none
-        }
-
-        #show-menu .share_button .fa-linkedin {
-            background-image: url({{ asset('public/frontend/Icon_Images/share/linkedin.png') }});
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60px 60px;
-            margin-left: -31px;
-            margin-top: 25px;
-        }
-
-        #show-menu .share_button .fa-linkedin:before {
-            content: "\f082";
-            display: none
-        }
-
-        #show-menu .share_button .fa-telegram {
-            background-image: url({{ asset('public/frontend/Icon_Images/share/telegram.png') }});
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60px 60px;
-            margin-left: -31px;
-            margin-top: 25px;
-        }
-
-        #show-menu .share_button .fa-telegram:before {
-            content: "\f082";
-            display: none
-        }
-
-        #show-menu .share_button .fa-twitter {
-            background-image: url({{ asset('public/frontend/Icon_Images/share/twitter.png') }});
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60px 60px;
-            margin-left: -31px;
-            margin-top: 25px;
-        }
-
-        #show-menu .share_button .fa-twitter:before {
-            content: "\f082";
-            display: none
-        }
-
-        #show-menu .share_button .fa-whatsapp {
-            background-image: url({{ asset('public/frontend/Icon_Images/share/whatsapp.png') }});
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60px 60px;
-            margin-left: -31px;
-            margin-top: 25px;
-        }
-
-        #show-menu .share_button .fa-whatsapp:before {
-            content: "\f082";
-            display: none
-        }
-
-        #show-menu .share_button img {
-            height: 60px;
-            width: 60px;
-        }
-    </style> --}}
     <div class="casestudy nav-top">
         <div class="slider  text-center position-relative"
-            style="background-image:url({{ asset('/public/frontend/Icon_Images/JobDetails/abstract-digital-grid-black-background.jpg') }}); height: 325px;">
-            <div class="bgclor " style="background: none">
+            style="background-image:url({{ asset('/public/frontend/Icon_Images/JobDetails/01image.png') }});">
+            <div class="bgclor  " style="background-color: rgb(21 20 64 / 68%);">
                 <div class="slider_text container">
+                    <svg viewBox="0 0 1320 300">
+                        <text x="50%" y="50%" dy=".35em" text-anchor="middle">Join Our Team </text>
 
-                    <img src="{{ asset('/public/frontend/Icon_Images/Root Devs.png') }}" alt="" srcset=""
-                        style="width: 17rem">
-                    <h4 class="mt-3  f100  text-center">Join Our Team </h4>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -117,43 +33,6 @@
                 <div class="row m-auto ">
                     <div class="col-9 p-0 d-flex align-items-center">
                         <h3 class=" float-start">{{ $career->title }}</h3>
-                        {{-- <div class="share_wraper float-start position-relative">
-                            <div class="menu">
-                                <input type="checkbox" id="toggle" class="d-none" />
-                                <label id="show-menu" for="toggle">
-                                    <div class="share_button border-0 main">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/share.png') }}"
-                                            alt="" srcset="">
-                                    </div>
-                                    <div class="share_button">
-                                        {!! Share::page('https://www.w3schools.com/cssref/css3_pr_background-size.php', $career->title)->facebook() !!}
-                                    </div>
-
-                                    <div class="share_button">
-                                        {!! Share::page($current, $career->title)->linkedin() !!}
-                                    </div>
-
-                                    <div class="share_button">
-                                        {!! Share::page($current)->telegram() !!}
-                                    </div>
-
-                                    <div class="share_button">
-                                        {!! Share::page($current)->twitter() !!}
-                                    </div>
-
-                                    <div class="share_button">
-                                        {!! Share::page($current)->whatsapp() !!}
-                                    </div>
-
-                                    <div class="share_button ">
-                                        <img onclick="myFunction()"
-                                            src="{{ asset('/public/frontend/Icon_Images/share/copy.png') }}" alt=""
-                                            srcset="">
-                                        <input type="text" value="qqqq" class="d-none" id="myInput">
-                                    </div>
-                                </label>
-                            </div>
-                        </div> --}}
                         <div id="share_button">
                             <div class="share">
                                 <span>
@@ -180,7 +59,7 @@
                     <div class="col-3 p-0">
                         <div class="" id="appy_button">
                             <a href="{{ route('basic-information', $career->slug) }}" class=" float-end">
-                                <img style="width: 7rem"
+                                <img class="apply_img"
                                     src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}" alt=""
                                     srcset="">
                             </a>
@@ -190,8 +69,7 @@
             </div>
         </div>
         <div class="details">
-            <h6><span class="root">Root</span><span class="Devs">Devs.</span> <span
-                    style="color: #a59898">{{ $career->address }}</span></h6>
+            {{--  <h6><span class="root">Root</span><span class="Devs">Devs.</span>  --}}
         </div>
         <div id="job-attr" class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
             <div class="col-6 col-md-3  border-bottom">
@@ -218,11 +96,11 @@
             <div class="job-details">
                 <div class="details "><img class="img_responsive"
                         src="{{ asset('/public/frontend/Icon_Images/JobDetails/overview.png') }}" alt=""
-                        srcset="" style="height: 80%"></div>
+                        srcset=""></div>
                 <div class="details">
                     <div class="details_main">
                         <h4 class="mb-4">Overview</h4>
-                        <p class="text-justify">{{ $career->overview }} </p>
+                        <p class="text-justify">{!! $career->overview !!} </p>
                         <br>
                     </div>
                 </div>
@@ -234,12 +112,8 @@
             <div class="job-details_right">
                 <div class="details text">
                     <div class="details_main">
-                        <h4 class="">Job Description</h4>
-                        <ul>
-                            @foreach (json_decode($career->overview_list) as $item)
-                                <li>{{ $item->list }} </li>
-                            @endforeach
-                        </ul>
+                        <h4 class="">Job Responsibilities</h4>
+                        <p class="text-justify">{!! $career->job_requirement !!}</p>
                     </div>
                 </div>
                 <div class="details img"><img class="img_responsive"
@@ -258,28 +132,59 @@
                     <div class="details_main">
                         <h4 class="mb-4">Educational Requirements
                         </h4>
-                        <p>{{ $career->requirements }}</p>
+                        <p>{!! $career->requirement !!}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="">
+        <div class="container">
+            <div class="job-details_right">
+                <div class="details text">
+                    <div class="details_main">
+                        <h4 class="">Compensation & Other Benefits</h4>
+                        <div class="text-justify benefits" style="font-size: 1.1rem;">{!! $career->benefits !!}</div>
+                    </div>
+                </div>
+                <div class="details img"><img class="img_responsive"
+                        src="{{ asset('/public/frontend/Icon_Images/JobDetails/benefits.png') }}" alt=""
+                        srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+    @if ($career->note != '' || $career->note != null)
+        <div class="card_bg">
+            <div class="container ">
+                <div class="">
+                    <div class="details_main py-4 " style="font-size: 17px;margin-left:5%">
+                        <p>{!! $career->note !!}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     </div>
     <div class="container">
         <div class="wreapper text-center py-5">
             <h4>Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301182928.png') }}" alt=""
-                        srcset=""></div>
+                        src="{{ asset('public/frontend/Icon_Images/Album/12image.webp') }}" alt=""
+                        srcset="">
+                </div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301183839.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/10image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301193011.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/11image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301200524.png') }}" alt=""
-                        srcset=""></div>
+                        src="{{ asset('public/frontend/Icon_Images/Album/09image.webp') }}" alt=""
+                        srcset="">
+                </div>
 
             </div>
         </div>

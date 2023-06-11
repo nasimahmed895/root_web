@@ -20,6 +20,7 @@
     border-radius: 27px;
     margin-left: 20px;
 }
+
 .share .nav {
     position: absolute;
     width: max-content;
@@ -125,6 +126,9 @@
     /* overflow: hidden; */
 }
 @media only screen and (max-width: 991px) {
+    .share span .fa-share-alt {
+        font-size: 20px;
+    }
     #share_button {
         position: absolute;
         right: 0%;
@@ -134,8 +138,9 @@
     .share {
         margin-top: 90px;
         position: fixed;
-        right: 50px;
+        right: 16px;
         top: 0%;
+        z-index: 9;
     }
     .share span {
         font-weight: 600;
@@ -146,14 +151,19 @@
         cursor: pointer;
         background-color: #000040;
         color: #f91d4e;
-        padding: 0px 15px;
-        padding-top: 0px;
-        padding-bottom: 6px;
         border-radius: 50px;
         position: relative;
         top: 26px;
-        box-shadow: 3px 3px 3px #f91d4ef5;
+        box-shadow: 3px 3px 3px #f91d4e57;
         right: 0;
+        padding: 0;
+        display: flex;
+        text-align: center;
+        line-height: 16px;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
     .share .nav {
         top: 32px;

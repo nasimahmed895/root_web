@@ -10,6 +10,7 @@ use App\Models\Featured;
 use App\Models\Applicant;
 use App\Models\ContactUs;
 
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
@@ -20,13 +21,18 @@ class WebController extends Controller
 {
     public function index()
     {
+        $agent = new Agent();
+
+        $mobile = $agent->isMobile();
+        $tablet = $agent->isTablet();
+
         $featured = Cache::rememberForever('featured', function () {
             return Featured::all();
         });
         $client = Cache::rememberForever('client', function () {
             return   Client::all();
         });
-        return view('frontend.pages.index', compact('featured', 'client'));
+        return view('frontend.pages.index', compact('featured', 'client', 'mobile', 'tablet'));
     }
 
     public function about()
@@ -76,13 +82,19 @@ class WebController extends Controller
     {
         $current = URL::current();
         $career = Career::where("slug", '=', $id)->first();
-        return view('frontend.pages.job_details', compact('career', 'current'));
+        if ($career != '' && $career != null) {
+            return view('frontend.pages.job_details', compact('career', 'current'));
+        } else {
+            abort(404);
+        }
     }
 
     // Job Apply Form
     public function basicInformation(request $request, $id)
     {
-        return view('frontend.pages.basicInformation', compact('id'));
+        $career = Career::where("slug", '=', $id)->first();
+        // return $career;
+        return view('frontend.pages.basicInformation', compact('career'));
     }
 
     // Job Apply Controller
@@ -161,7 +173,7 @@ class WebController extends Controller
         $contactUs->save();
 
         if (!$request->ajax()) {
-            return redirect('/')->with('success', _lang('Your application has been submitted successfully.'));
+            return redirect('/')->with('success', _lang('Your Meeting has been submitted successfully.'));
         } else {
             return response()->json(['result' => 'success',  'redirect' => route('index'), 'message' => 'Your application has been submitted successfully.']);
         }

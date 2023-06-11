@@ -4,12 +4,14 @@
 
 @section('container')
     <div class="slider basicinformation text-center"
-        style="background-image:url({{ asset('/public/frontend/Icon_Images/company-representatives-reading-applicant-resume-hiring.png') }})">
-        <div class=" pt-5 pb-5 " style="background-color:  #3f3f89c2;;">
-            <h4 class="mb-3 pt-lg-5 f500"><img width="86px" src="{{ asset('/public/frontend/Icon_Images/Root Devs.png') }}"
-                    alt="logo" srcset="">
-            </h4>
-            <p class="pb-lg-5 f300 ff-candara">Job Title: Junior Flutter Developer</p>
+        style="background-image:url({{ asset('/public/frontend/Icon_Images/company-representatives-reading-applicant-resume-hiring.png') }}) ;  margin-top: 50px">
+        <div class="pt-5 pb-5 bgclor heding_content">
+            <div>
+                <h4 class="mb-3 pt-lg-5 f500"><img width="86px"
+                        src="{{ asset('/public/frontend/Icon_Images/Root Devs.png') }}" alt="logo" srcset="">
+                </h4>
+                <p class="pb-lg-5 f300 ff-candara">Job Title: {{ $career->title }}</p>
+            </div>
         </div>
     </div>
 
@@ -17,7 +19,7 @@
         <div class="row my-5">
             <div class="col-md-10 m-auto text-center">
                 <h2 class="mb-5">Basic Information</h2>
-                <div class="card basicinformation"
+                <div class="card basicinformation submit_card"
                     style="background-color: #F7FAFD; border: none;  box-shadow: 0px 0px 6px 1px #CFCECE; padding: 30px 30px;">
 
                     <div class="row  ">
@@ -26,7 +28,7 @@
                             <form action="{{ route('apply_now') }}" id="apply_form" method="POST"
                                 enctype="multipart/form-data" class="needs-validation" novalidate>
                                 @csrf
-                                <input type="hidden" name="slug" value="{{ $id }}">
+                                <input type="hidden" name="slug" value="{{ $career->slug }}">
                                 <div class="row ">
                                     <div class="col-12">
                                         <div class="mb-5">
@@ -42,8 +44,6 @@
                                                     Enter Your Valid Name.
                                                 </div>
                                             </div>
-                                            {{--  <div class="screenNameError text-danger "
-                                                style="font-size: .8rem ; text-align: left"></div>  --}}
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -134,17 +134,18 @@
             <h4>Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h4>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301182928.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/13image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301183839.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/15image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301193011.png') }}" alt=""
+                        src="{{ asset('public/frontend/Icon_Images/Album/14image.webp') }}" alt=""
                         srcset=""></div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="{{ asset('public/frontend/Icon_Images/Album/IMG20220301200524.png') }}" alt=""
-                        srcset=""></div>
+                        src="{{ asset('public/frontend/Icon_Images/Album/09image.webp') }}" alt=""
+                        srcset="">
+                </div>
 
             </div>
         </div>
@@ -180,7 +181,6 @@
                     return name = false;
                 }
 
-                console.log(name);
 
 
 
@@ -204,21 +204,11 @@
                 } else {
                     numbre_valid = false
                 }
-                // const number_array = "017 018 019 016 015 013 014";
-                // console.log(number_array.includes("017"));
-                //var numbre_valid = number_array.includes(number)
                 if (numbre_valid && numbre_length) {
-                    // $('#submit_now').removeAttr('disabled', 'disabled');
                     $('.screennumberError').addClass('d-none');
-                    //let name = true;
-                    // console.log(true);
                 } else {
-
-                    // $('#submit_now').attr('disabled', 'disabled');
                     $('.screennumberError').removeClass('d-none');
                     $('.screennumberError').html(' Enter Your Valid Phone Number');
-                    //let name = false;
-                    //console.log(false);
                 }
 
             });
@@ -238,15 +228,11 @@
 
             $("[name=file]").change(function() {
                 var fele_get = this.files[0]
-                // var file_name = fele_get.name;
                 var file_extension = fele_get.type;
-                console.log(file_extension)
                 if (file_extension == 'application/pdf' && this != '') {
-                    console.log('file_ok');
                     $('#file_error').css("display", "none");
                     file = true
                 } else {
-                    console.log('file_not');
                     $('#file_error').css("display", "block");
 
                     file = false
@@ -256,18 +242,14 @@
                 e.preventDefault();
 
                 if (file != '') {
-                    console.log('file_ok');
                     $('#file_error').css("display", "none");
                     file = true
                 } else {
                     $('#file_error').css("display", "block");
                     file = false
                 }
-                //$('#file_error').css("display", "block");
                 if (numbre_valid && numbre_length && name && email && file) {
-                    console.log('ok');
                     var formData = new FormData(this);
-                    console.log(formData);
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -281,10 +263,15 @@
                         processData: false,
                         cache: false,
                         success: (response) => {
+
                             if (response.result == 'success') {
                                 $(".invalid-tooltip ").addClass('d-none');
                                 this.reset();
-                                toast('success', response.message);
+                                toast('success',
+                                    'Your application has been submitted successfully.')
+                                window.setTimeout(function() {
+                                    window.location.replace(response.redirect)
+                                }, 1000);
                                 if (response.redirect != undefined && response.redirect != '') {
                                     window.setTimeout(function() {
                                         window.location.replace(response.redirect)
@@ -293,16 +280,14 @@
                                 // return true;
                             } else {
                                 console.log(response)
+                                toast('error', response.error);
                             }
                         },
                         error: function(response) {
                             console.log(response);
-                            //$('#file-input-error').text(response.responseJSON.message);
                         }
                     });
-                } else {
-                    console.log('not');
-                }
+                } else {}
 
 
             });
@@ -313,11 +298,7 @@
 
         (function() {
             'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
             Array.prototype.slice.call(forms)
                 .forEach(function(form) {
                     form.addEventListener('submit', function(event) {

@@ -4,9 +4,9 @@
 
 @section('container')
     <div class="about nav-top">
-        <div class="slider   text-center"
-            style="background-image:url({{ asset('/public/frontend/Icon_Images/About\ Us.jpg') }}">
-            <div class="bgclor px20">
+        <div class="slider  text-center"
+            style="background-image:url({{ asset('public/frontend/Icon_Images/Album/15image.webp') }}">
+            <div class="bgclor abotu_hed_content">
                 <div class="container">
                     <h2 class="mb-3 f500">Who We Are ?</h2>
                     <p class=" ff-Roboto f100"><span class="root">Root</span><span class="devs">Devs</span> is here to give
@@ -46,13 +46,13 @@
                                         <h6 class="card-title">{{ get_option('ceo_Name') }}</h6>
                                         <p class="card-text pb-3 pt-2">{{ get_option('ceo_designation') }}</p>
                                         <div class="social_info height">
-                                            <a href="tel:{{ get_option('ceo_whatsapp') }}"><i
+                                            <a href="{{ get_option('ceo_linkedin') }}" target="_blank"><i
+                                                    class="fab fa-linkedin" target="_blank"></i></i></a>
+                                            <a href="https://wa.me/{{ get_option('ceo_whatsapp') }}" target="_blank"><i
                                                     class="fab fa-whatsapp"></i></a>
-                                            <a href="{{ get_option('ceo_instagram') }}" target="_blank"><i
+                                            <a href="https://t.me/{{ get_option('ceo_telegram') }}" target="_blank"><i
                                                     class="fab fa-telegram-plane"></i></a>
-                                            <a href="{{ get_option('ceo_viber') }}" target="_blank"><i
-                                                    class="fab fa-viber"></i></a>
-                                            <a href="{{ get_option('ceo_skype') }}" target="_blank"><i
+                                            <a href="skype:{{ get_option('ceo_skype') }}" target="_blank"><i
                                                     class="fab fa-skype"></i></a>
                                         </div>
                                     </div>
@@ -73,13 +73,13 @@
                                         <h6 style="" class="card-title">{{ get_option('co_Name') }}</h6>
                                         <p class="card-text pb-3 pt-2">{{ get_option('co_designation') }}</p>
                                         <div class="social_info height">
-                                            <a href="tel:{{ get_option('co_whatsapp') }} "><i
+                                            <a href="{{ get_option('co_linkedin') }}" target="_blank"><i
+                                                    class="fab fa-linkedin"></i></a>
+                                            <a href="https://wa.me/{{ get_option('co_whatsapp') }} " target="_blank"><i
                                                     class="fab fa-whatsapp"></i></a>
-                                            <a href="{{ get_option('co_instagram') }}" target="_blank"><i
+                                            <a href="{{ get_option('co_telegram') }}" target="_blank"><i
                                                     class="fab fa-telegram-plane"></i></a>
-                                            <a href="{{ get_option('co_viber') }}" target="_blank"><i
-                                                    class="fab fa-viber"></i></a>
-                                            <a href="{{ get_option('co_skype') }}" target="_blank"><i
+                                            <a href="skype:{{ get_option('co_skype') }}" target="_blank"><i
                                                     class="fab fa-skype"></i></a>
 
                                         </div>
@@ -110,7 +110,7 @@
                         object-fit: cover;
                         border-radius: 0;
                        "
-                            src="{{ asset('/public/frontend/Icon_Images/ourteam.png') }}" alt="" srcset="">
+                            src="{{ asset('/public/frontend/Icon_Images/ourteam.webp') }}" alt="" srcset="">
                     </div>
                 </div>
                 <div class="col-lg-6  d-flex align-items-center justify-content-center">
@@ -182,16 +182,16 @@
             <h2 class="mb-3">Life at <strong style="color: red; text-shadow: 2px 3px 2px #ddd;">Root</strong> Devs</h2>
             <div class="grid-container gallery">
                 <div class="grid-item1 grid-item"><img class="team1 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301182928.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/02image.webp" alt="" srcset="">
                 </div>
                 <div class="grid-item2 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301183839.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/01image.webp" alt="" srcset="">
                 </div>
                 <div class="grid-item3 grid-item"><img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301193011.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/03image.webp" alt="" srcset="">
                 </div>
                 <div class="grid-item4 grid-item"> <img class="team2 teamimg img_responsive"
-                        src="public/frontend/Icon_Images/Album/IMG20220301200524.png" alt="" srcset="">
+                        src="public/frontend/Icon_Images/Album/04image.webp" alt="" srcset="">
                 </div>
 
             </div>

@@ -1,6 +1,7 @@
 {{--  jQuery & jQueryUI  --}}
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"
+    charset="utf-8"></script>
 
 <!-- Dropify  -->
 <script src="{{ asset('/public/backend/assets/plugins/dropify/dropify.min.js') }}"></script>
@@ -30,8 +31,18 @@
 <script src="{{ asset('/public/backend/assets/js/plugins/chartjs.min.js') }}"></script>
 <script src="{{ asset('/public/backend/assets/js/argon-dashboard.min.js?v=2.0.4') }}"></script>
 
+{{--  summernote  --}}
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{{--  summernote  --}}
+
 <script>
     //dropify
+    $('.close').click(function(e) {
+        $('#main_modal').modal('hide');
+    })
+
     let loder = document.querySelector('#loder');
     window.onload = function() {
         loder.style.display = 'none ';

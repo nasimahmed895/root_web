@@ -79,7 +79,7 @@ $(function () {
 
     function doCount(num, index, speed, groupClass, direction, easing) {
         let className = groupClass + ' ' + counterClass + '.' + 'c_' + index;
-        if(easing == undefined) easing = "swing";
+        if (easing == undefined) easing = "swing";
         $(className).animate({
             num
         }, {

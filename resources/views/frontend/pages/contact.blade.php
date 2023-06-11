@@ -362,7 +362,7 @@
                             if (response.redirect != undefined && response.redirect != '') {
                                 window.setTimeout(function() {
                                     window.location.replace(response.redirect)
-                                }, 1000);
+                                }, 3000);
                             }
                         } else {
                             console.log(response)
@@ -411,8 +411,6 @@
                 }
             }
         });
-
-        console.log($('#datetimepicker3').datetimepicker('getValue'));
         $("#confram_button").click(function() {
             $time_chack = $(".xdsoft_time").hasClass("xdsoft_current");
             $date_chack = $(".xdsoft_date ").hasClass("xdsoft_current");

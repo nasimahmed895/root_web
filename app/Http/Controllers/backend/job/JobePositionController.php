@@ -7,13 +7,15 @@ use App\Models\Career;
 use App\Models\ContactUs;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class JobePositionController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     
      * @return \Illuminate\Http\Response
      */
     public function index(request $request)
@@ -81,17 +83,16 @@ class JobePositionController extends Controller
         $validator = \Validator::make($request->all(), [
 
             'title' => 'required|string|max:191',
-            'company_name' => 'required',
             'location' => 'required',
             'vacancy' => 'required',
-            'address' => 'required',
             'work_level' => 'required',
             'experience' => 'required',
             'job_time' => 'required',
             'salary' => 'required',
             'overview' => 'required',
-            'requirements' => 'required',
-            'overview_list' => 'required',
+            'requirement' => 'required',
+            'job_requirement' => 'required',
+            'benefits' => 'required',
             'status' => 'required',
 
         ]);
@@ -99,34 +100,30 @@ class JobePositionController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-        $overview_lists = [];
-        foreach ($request->overview_list as $key => $value) {
-            if ($value != null) {
-                $overview_lists[] = [
-                    'list' => $value,
-                ];
-            }
-        }
 
+        DB::beginTransaction();
         $job = new Career();
         $job->title = $request->title;
         $job->slug = Str::slug($request->title, '-') . '-' . uniqid();
-        $job->company_name = $request->company_name;
         $job->location = $request->location;
         $job->vacancy = $request->vacancy;
         $job->date =  \Carbon\Carbon::parse($request->date)->timestamp;
-        $job->address = $request->address;
         $job->work_level = $request->work_level;
         $job->experience = $request->experience;
         $job->job_time = $request->job_time;
         $job->salary = $request->salary;
         $job->overview = $request->overview;
-        $job->requirements = $request->requirements;
-        $job->overview_list =  json_encode($overview_lists);
+        $job->requirement = $request->requirement;
+        $job->job_requirement = $request->job_requirement;
+        $job->benefits = $request->benefits;
+        $job->note = $request->note;
         $job->status = $request->status;
         $job->save();
+        DB::commit();
 
-        return redirect('job-post/index')->with('success', _lang('Information has been added success.'));
+        Cache::forget('career');
+
+        return redirect(route('job-post.index'))->with('success', _lang('Information has been added success.'));
     }
 
     /**
@@ -165,18 +162,18 @@ class JobePositionController extends Controller
         // return $request->input();
         $validator = \Validator::make($request->all(), [
 
+
             'title' => 'required|string|max:191',
-            'company_name' => 'required',
             'location' => 'required',
             'vacancy' => 'required',
-            'address' => 'required',
             'work_level' => 'required',
             'experience' => 'required',
             'job_time' => 'required',
             'salary' => 'required',
             'overview' => 'required',
-            'requirements' => 'required',
-            'overview_list' => 'required',
+            'requirement' => 'required',
+            'job_requirement' => 'required',
+            'benefits' => 'required',
             'status' => 'required',
 
         ]);
@@ -184,33 +181,25 @@ class JobePositionController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-        $overview_lists = [];
-        foreach ($request->overview_list as $key => $value) {
-            if ($value != null) {
-                $overview_lists[] = [
-                    'list' => $value,
-                ];
-            }
-        }
-
+        DB::beginTransaction();
         $job =  Career::find($id);
         $job->title = $request->title;
-        $job->slug = Str::slug($request->title, '-') . '-' . uniqid();
-        $job->company_name = $request->company_name;
         $job->location = $request->location;
         $job->vacancy = $request->vacancy;
         $job->date =  \Carbon\Carbon::parse($request->date)->timestamp;
-        $job->address = $request->address;
         $job->work_level = $request->work_level;
         $job->experience = $request->experience;
         $job->job_time = $request->job_time;
         $job->salary = $request->salary;
         $job->overview = $request->overview;
-        $job->requirements = $request->requirements;
-        $job->overview_list =  json_encode($overview_lists);
+        $job->requirement = $request->requirement;
+        $job->job_requirement = $request->job_requirement;
+        $job->benefits = $request->benefits;
+        $job->note = $request->note;
         $job->status = $request->status;
         $job->update();
-
+        DB::commit();
+        Cache::forget('career');
         return redirect(route('job-post.index'))->with('success', _lang('Information has been added success.'));
     }
 
@@ -223,6 +212,7 @@ class JobePositionController extends Controller
     public function destroy(request $request, $id)
     {
         Career::find($id)->delete();
+        Cache::forget('career');
         if (!$request->ajax()) {
             return back()->with('success', _lang('Information has been deleted'));
         } else {
