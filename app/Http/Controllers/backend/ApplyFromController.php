@@ -13,7 +13,7 @@ class ApplyFromController extends Controller
     public function index(request $request)
     {
 
-        $apply_form = Applicant::latest()->get();
+        $apply_form = Applicant::orderBy('id', 'desc');
         //return $apply_form;
 
         if ($request->ajax()) {
